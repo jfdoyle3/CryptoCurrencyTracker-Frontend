@@ -1,14 +1,14 @@
 import React, {useContext, Fragment} from 'react';
 import NavButton from './NavButton';
-import {AuthContext} from '../Providers/AuthProvider'
+// import {AuthContext} from '../Providers/AuthProvider'
 
 const NavBar = (props) => {
-  const [auth] = useContext(AuthContext)
+ // const [auth] = useContext(AuthContext)
 
   return (
     <nav style={{
       display:'flex',
-      backgroundColor: "blue",
+      backgroundColor: "#f2a900",
       position: "absolute",
       width: "100%",
       zIndex: 9999,
@@ -23,7 +23,7 @@ const NavBar = (props) => {
         alignItems: 'center',
         padding: '0em 1.2em'
       }}>
-        <h1 style={{color: "lightgreen"}}>DevConnector</h1>
+        <h1 style={{color: "#006097"}}>Cryptocurrency Tracker</h1>
       </div>
         <div style={{
           flex: 1,
@@ -38,8 +38,7 @@ const NavBar = (props) => {
           justifyContent: 'flex-end'
         }}>
           <NavButton to="/" label="Home" />
-          <NavButton to="/news" label="News" />
-          {auth.token ? (
+          {/* {auth.token ? (
             <NavButton to="/developers" label="Developers" />
           ) : (
             <Fragment>
@@ -47,7 +46,7 @@ const NavBar = (props) => {
               <NavButton to="/register" label="Sign up" />
             </Fragment>
           ) }
-          
+            */}
         </div>
     </nav> 
   )
