@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import Navbar from "../Navbar/NavBar";
 import Home from "../Home/Home";
+import TopTen from "../cryptocurrency/TopTen";
 
 // import Login from '../Auth/Login';
 // import Register from '../Auth/Register';
@@ -16,6 +17,7 @@ const AppRouter = () => {
         
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/topten" element={<TopTen />} />
 
           {/* <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} /> */}

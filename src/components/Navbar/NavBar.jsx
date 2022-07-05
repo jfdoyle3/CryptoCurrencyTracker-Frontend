@@ -38,6 +38,7 @@ const NavBar = (props) => {
           justifyContent: 'flex-end'
         }}>
           <NavButton to="/" label="Home" />
+          <NavButton to="/topTen" label="Top Ten" />
           {/* {auth.token ? (
             <NavButton to="/developers" label="Developers" />
           ) : (
