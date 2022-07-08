@@ -3,7 +3,7 @@ import background from '../../Assets/images/cryptocurrency-background.jpg';
 
 
 const Home = () => {
-
+  console.log("Home - activated!!")
   const styles = {
     header: {
       backgroundImage: `url(${background})`,

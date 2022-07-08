@@ -5,30 +5,29 @@ import { apiHostUrl } from '../../config';
 import  Currency from './Currency';
 
 
-const TopFive = () => {
-  const[topFive,setTopFive]=useState([]);
+const Currencies = () => {
+  const[currencies,setCurrencies]=useState([]);
   const [loading, setLoading]=useState(true); 
 
   useEffect(()=> {
-  
-    const _getTopFive=async()=>{
-      console.log("TopFive - use Effect Acitvated!!!");
+    console.log("Currencies - use Effect Acitvated!!!");
+    const _getAllCurrencies=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/currency/topfive`);
+        const res=await axios.get(`${apiHostUrl}/api/currency/`);
         console.log(res.data);
         setLoading(false);
-        setTopFive(res.data);
+        setCurrencies(res.data);
       }catch(err){
         console.error(err.message);
       }
 
     }
     setLoading(true)
-    _getTopFive();
+    _getAllCurrencies();
   },[])
 
-  const displayCurrencyInfo = () => {
-    return topFive.map(info => <Currency currencyInfo={info} key={info.ranking} />)
+  const displayCurrencies = () => {
+    return currencies.map(info => <Currency currencyInfo={info} key={info.ranking} />)
   }
 
   // const onSelect = (devId) => {
@@ -37,16 +36,22 @@ const TopFive = () => {
 
   return (
 
-    <div>
+    <div style={{
+      display: "flex",
+      flex: "1",
+      flexDirection: "column",
+      alignItems: 'center',
+      minHeight: '100vh',
+    }}>
       <h1>Currencies</h1>
       {loading ? 
         <Spinner /> 
       :
-        displayCurrencyInfo()
+        displayCurrencies()
       }
     </div>
     
   )
 }
 
-export default TopFive;
+export default Currencies;

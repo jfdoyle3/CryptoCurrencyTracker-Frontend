@@ -4,7 +4,7 @@ import NavButton from './NavButton';
 
 const NavBar = (props) => {
  // const [auth] = useContext(AuthContext)
-
+  console.log("NavBar-ran");
   return (
     <nav style={{
       display:'flex',
@@ -39,6 +39,7 @@ const NavBar = (props) => {
         }}>
           <NavButton to="/" label="Home" />
           <NavButton to="/topfive" label="Top Five" />
+          <NavButton to="/currencies" label="Currencies"/>
           {/* {auth.token ? (
             <NavButton to="/developers" label="Developers" />
           ) : (
