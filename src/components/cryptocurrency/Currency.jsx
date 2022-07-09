@@ -1,21 +1,17 @@
 import React from 'react';
-import BorderCard from '../common/BorderCard';
 
 const Currency = (props) => {
 
     const{name,ranking,logoUrl,symbol}=props.currencyInfo
 
   return (
-        <table>
-          <thead>
+        <table border={1}>
             <tr>
               <th></th>
               <th>Rank</th>
               <th>Name</th>
               <th>Symbol</th>
             </tr>
-          </thead>
-          <tbody>
               <tr key={ranking}>
                 <td>
                 <img src={logoUrl} width={25} height={25}  alt={name} />
@@ -38,9 +34,7 @@ const Currency = (props) => {
                   </button> */}
                 </td>
               </tr>
-          </tbody>
         </table>
- 
   )
 }
 
