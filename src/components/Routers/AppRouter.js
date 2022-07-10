@@ -2,8 +2,8 @@ import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import Navbar from "../Navbar/NavBar";
 import Home from "../Home/Home";
-import TopFive from "../cryptocurrency/TopFive";
-import Currencies from '../cryptocurrency/Currencies';
+import TopFive from "../Cryptocurrency/TopFive";
+import Currencies from '../Cryptocurrency/Currencies';
 
 // import Login from '../Auth/Login';
 // import Register from '../Auth/Register';

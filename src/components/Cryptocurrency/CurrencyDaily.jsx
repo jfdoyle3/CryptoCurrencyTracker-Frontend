@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../Styling/CurrencyTable.css";
 
-const Currency = (props) => {
+const CurrencyDaily = (props) => {
 
     const{name,ranking,logoUrl,symbol}=props.currencyInfo
 
@@ -31,7 +31,7 @@ const Currency = (props) => {
   )
 }
 
-export default Currency;
+export default CurrencyDaily;
 
 
 // private String currency_id;
