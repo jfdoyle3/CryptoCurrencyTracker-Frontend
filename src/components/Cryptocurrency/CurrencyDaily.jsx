@@ -33,5 +33,29 @@ const CurrencyDaily = (props) => {
 
 export default CurrencyDaily;
 
+// @Column(name = "symbol")
+// private String symbol;
 
-// private String currency_id;
+// @Column(name = "price")
+// private String price;
+
+// @Column(name = "price_date")
+// private String priceDate;
+
+// @Column(name = "price_timestamp")
+// private String priceTimeStamp;
+
+// @Column(name = "circulating_supply")
+// private String circulatingSupply;
+
+// @Column(name = "max_supply")
+// private String maxSupply;
+
+// @Column(name = "market_cap")
+// private String marketCap;
+
+// @Column(name = "high")
+// private String high;
+
+// @Column(name = "high_timestamp")
+// private String highTimeStamp;

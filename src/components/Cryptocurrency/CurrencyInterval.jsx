@@ -3,29 +3,31 @@ import "../../Styling/CurrencyTable.css";
 
 const CurrencyInterval = (props) => {
 
-    const{name,ranking,logoUrl,symbol}=props.currencyInfo
+    const{symbol,
+          volume,
+          priceChange,
+          priceChangePct,
+          volumeChange,
+          volumeChangePct}=props.currencyInterval
 
   return (
         <table border={1}>
             <tr>
               <th></th>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>Symbol</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
             </tr>
-              <tr key={ranking}>
-                <td>
-                <img src={logoUrl} width={25} height={25}  alt={name} />
-                </td>
-                <td>{ranking}</td>
-                <td>{name}</td>
+              <tr >
                 <td>{symbol}</td>
-                <td>
-                  <button
-                    className="waves-effect waves-light btn-small">
-                    View
-                  </button>
-                </td>
+                <td>{volume}</td>
+                <td>{priceChange}</td>
+                <td>{priceChangePct}</td>
+                <td>{volumeChange}</td>
+                <td>{volumeChangePct}</td>
               </tr>
         </table>
   )
@@ -34,4 +36,11 @@ const CurrencyInterval = (props) => {
 export default CurrencyInterval;
 
 
-// private String currency_id;
+	
+timeInterval
+symbol
+volume
+priceChange
+priceChangePct
+volumeChange
+volumeChangePct
