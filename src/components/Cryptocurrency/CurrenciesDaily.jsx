@@ -13,7 +13,7 @@ const CurrenciesDaily = () => {
     console.log("CurrenciesDaily - use Effect Acitvated!!!");
     const _getAllCurrencies=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/currency/`);
+        const res=await axios.get(`${apiHostUrl}/api/currency/BTC`);
         console.log(res.data);
         setLoading(false);
         setCurrenciesDaily(res.data);
