@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
-import  CurrencyInterval from './Models/Currency/CurrenciesInterval';
+import  CurrencyInterval from './Models/CurrencyInterval';
 
 
 const CurrenciesInterval = () => {
@@ -13,7 +13,7 @@ const CurrenciesInterval = () => {
     console.log("CurrenciesInterval - use Effect Acitvated!!!");
     const _getAllCurrencies=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/currency/`);
+        const res=await axios.get(`${apiHostUrl}/api/interval/btc/7d`);
         console.log(res.data);
         setLoading(false);
         setCurrenciesInterval(res.data);

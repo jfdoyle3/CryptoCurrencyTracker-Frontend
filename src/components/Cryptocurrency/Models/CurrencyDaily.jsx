@@ -3,7 +3,18 @@ import "../../../Styling/CurrencyTable.css";
 
 const CurrencyDaily = (props) => {
 
-    const{id, symbol, price}=props.currencyDaily
+    const{
+          id, 
+          symbol, 
+          price,               
+          priceDate,
+          priceTimeStamp,
+          circulatingSupply,
+          maxSupply,
+          marketCap,
+          high,
+          highTimeStamp,
+        }=props.currencyDaily
 
   return (
         <table border={1}>
@@ -22,8 +33,13 @@ const CurrencyDaily = (props) => {
               <tr key={id}>
                 <td>{symbol}</td>
                 <td>{price}</td>
-                <td>{price}</td>
-
+                <td>{priceDate}</td>
+                <td>{priceTimeStamp}</td>
+                <td>{circulatingSupply}</td>
+                <td>{maxSupply}</td>
+                <td>{marketCap}</td>
+                <td>{high}</td>
+                <td>{highTimeStamp}</td>
                 <td>
                   <button
                     className="waves-effect waves-light btn-small">
