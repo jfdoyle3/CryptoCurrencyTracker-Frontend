@@ -3,7 +3,8 @@ import "../../../Styling/CurrencyTable.css";
 
 const CurrencyInterval = (props) => {
 
-    const{symbol,
+    const{id,
+          symbol,
           volume,
           priceChange,
           priceChangePct,
@@ -21,7 +22,7 @@ const CurrencyInterval = (props) => {
               <th>5</th>
               <th>6</th>
             </tr>
-              <tr >
+              <tr key={id}>
                 <td>{symbol}</td>
                 <td>{volume}</td>
                 <td>{priceChange}</td>
@@ -37,10 +38,10 @@ export default CurrencyInterval;
 
 
 	
-timeInterval
-symbol
-volume
-priceChange
-priceChangePct
-volumeChange
-volumeChangePct
+// timeInterval
+// symbol
+// volume
+// priceChange
+// priceChangePct
+// volumeChange
+// volumeChangePct

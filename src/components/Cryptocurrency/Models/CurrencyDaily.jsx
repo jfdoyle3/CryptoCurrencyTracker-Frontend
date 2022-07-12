@@ -22,6 +22,7 @@ const CurrencyDaily = (props) => {
               <tr key={id}>
                 <td>{symbol}</td>
                 <td>{price}</td>
+                <td>{price}</td>
 
                 <td>
                   <button
