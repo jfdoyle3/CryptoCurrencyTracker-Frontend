@@ -1,25 +1,28 @@
 import React from 'react';
-import "../../Styling/CurrencyTable.css";
+import "../../../Styling/CurrencyTable.css";
 
 const CurrencyDaily = (props) => {
 
-    const{name,ranking,logoUrl,symbol}=props.currencyInfo
+    const{id, symbol, price}=props.currencyDaily
 
   return (
         <table border={1}>
             <tr>
               <th></th>
-              <th>Rank</th>
-              <th>Name</th>
               <th>Symbol</th>
+              <th>Price Date</th>
+              <th>Price TimeStamp</th>
+              <th>Circulating Supply</th>
+              <th>Max Supply</th>
+              <th>Market Cap</th>
+              <th>High</th>
+              <th>High TimeStamp</th>
+              <th></th>
             </tr>
-              <tr key={ranking}>
-                <td>
-                <img src={logoUrl} width={25} height={25}  alt={name} />
-                </td>
-                <td>{ranking}</td>
-                <td>{name}</td>
+              <tr key={id}>
                 <td>{symbol}</td>
+                <td>{price}</td>
+
                 <td>
                   <button
                     className="waves-effect waves-light btn-small">
@@ -49,7 +52,7 @@ export default CurrencyDaily;
 // private String circulatingSupply;
 
 // @Column(name = "max_supply")
-// private String maxSupply;
+// private String circulatingSupply;
 
 // @Column(name = "market_cap")
 // private String marketCap;

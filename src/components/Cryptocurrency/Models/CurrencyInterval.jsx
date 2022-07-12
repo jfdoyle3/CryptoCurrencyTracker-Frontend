@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../Styling/CurrencyTable.css";
+import "../../../Styling/CurrencyTable.css";
 
 const CurrencyInterval = (props) => {
 

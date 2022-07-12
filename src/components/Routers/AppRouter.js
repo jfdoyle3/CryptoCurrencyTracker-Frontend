@@ -4,6 +4,7 @@ import Navbar from "../Navbar/NavBar";
 import Home from "../Home/Home";
 import TopFive from "../Cryptocurrency/TopFive";
 import Currencies from '../Cryptocurrency/Currencies';
+import CurrenciesDaily from '../Cryptocurrency/CurrenciesDaily';
 
 // import Login from '../Auth/Login';
 // import Register from '../Auth/Register';
@@ -20,6 +21,7 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/topfive" element={<TopFive />} />
           <Route path="/currencies" element={<Currencies />} />
+          <Route path="/dailyPrices" element={<CurrenciesDaily />} />
 
           {/* <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} /> */}
