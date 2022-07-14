@@ -6,7 +6,7 @@ const Currency = (props) => {
     const{name,ranking,logoUrl,symbol}=props.currencyInfo
 
   return (
-        <table border={1}>
+        <table >
             <tr>
               <th></th>
               <th>Rank</th>

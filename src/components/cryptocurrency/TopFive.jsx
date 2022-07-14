@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
-import  Currency from './Currency';
+import  Currency from './Models/Currency';
 
 
 
@@ -38,7 +38,13 @@ const TopFive = () => {
 
   return (
 
-    <div>
+    <div style={{
+      display: "flex",
+      flex: "1",
+      flexDirection: "column",
+      alignItems: 'center',
+      minHeight: '100vh',
+    }}>
       <h1>Currencies</h1>
       {loading ? 
         <Spinner /> 
