@@ -42,6 +42,7 @@ const NavBar = (props) => {
           <NavButton to="/currencies" label="Currencies"/>
           <NavButton to="/dailyPrices" label="Daily Price" />
           <NavButton to="/interval" label="Interval" />
+          <NavButton to="/boo" label="Hi" />
           {/* {auth.token ? (
             <NavButton to="/developers" label="Developers" />
           ) : (

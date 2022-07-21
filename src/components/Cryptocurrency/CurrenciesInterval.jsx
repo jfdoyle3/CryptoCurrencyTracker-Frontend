@@ -13,7 +13,7 @@ const CurrenciesInterval = () => {
     console.log("CurrenciesInterval - use Effect Acitvated!!!");
     const _getAllCurrencies=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/interval/btc/7d`);
+        const res=await axios.get(`${apiHostUrl}/api/interval/BTC/7d`);
         console.log(res.data);
         setLoading(false);
         setCurrenciesInterval(res.data);
