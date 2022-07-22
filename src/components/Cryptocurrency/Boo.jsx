@@ -9,7 +9,7 @@ const Boo=()=>{
       <div className="container">
         <Hi_one />
       </div>
-        <div>
+        <div className="row">
           <Hi_two />
         </div>
       <div>
