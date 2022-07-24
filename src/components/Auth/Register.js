@@ -12,7 +12,6 @@ const Register = () => {
     username: "",
     password: "",
     confirm: "",
-    cohort: "",
     fname: "",
     lname: "",
   });
@@ -63,7 +62,7 @@ const Register = () => {
     data.email = data.username;
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/developers", 
+        "http://localhost:8080/api/trackers", 
         data,
         {
           headers: {
@@ -74,7 +73,7 @@ const Register = () => {
       console.log(res.data);
       setAuth({token, name: res.data.name});
       alert(res.data.id);
-      navigate('/developers')
+      navigate('/trackers')
     } catch (err) {
       alert (err.response.data.message);
     }

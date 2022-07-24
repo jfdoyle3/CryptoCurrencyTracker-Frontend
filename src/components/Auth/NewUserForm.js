@@ -62,15 +62,6 @@ const NewUserForm = (props) => {
           value={query.confirm}
         />
       </InlineInputContainer>
-      <InlineInputContainer>
-        <Input
-          id="cohort"
-          placeholder="Cohort Number"
-          type="number"
-          onChange={handleChange}
-          value={query.cohort}
-        />
-      </InlineInputContainer>
       <Button>Submit</Button>
     </Form>
   )

@@ -1,9 +1,9 @@
 import React, {useContext, Fragment} from 'react';
 import NavButton from './NavButton';
-// import {AuthContext} from '../Providers/AuthProvider'
+import {AuthContext} from '../Providers/AuthProvider'
 
 const NavBar = (props) => {
- // const [auth] = useContext(AuthContext)
+ const [auth] = useContext(AuthContext)
   console.log("NavBar-ran");
   return (
     <nav style={{
@@ -38,20 +38,19 @@ const NavBar = (props) => {
           justifyContent: 'flex-end'
         }}>
           <NavButton to="/" label="Home" />
-          <NavButton to="/topfive" label="Top Five" />
+          {/* <NavButton to="/topfive" label="Top Five" />
           <NavButton to="/currencies" label="Currencies"/>
           <NavButton to="/dailyPrices" label="Daily Price" />
-          <NavButton to="/interval" label="Interval" />
-          <NavButton to="/boo" label="Hi" />
-          {/* {auth.token ? (
-            <NavButton to="/developers" label="Developers" />
+          <NavButton to="/interval" label="Interval" /> */}
+          {auth.token ? (
+            <NavButton to="/trackers" label="Trackers" />
           ) : (
             <Fragment>
               <NavButton to="/login" label="Login" />
               <NavButton to="/register" label="Sign up" />
             </Fragment>
           ) }
-            */}
+           
         </div>
     </nav> 
   )
