@@ -11,11 +11,7 @@ const Trackers = (props) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // use effect to pull list of Trackers
-  // use state to store the Trackers
-  // neet bearer token to get the Tracker list.
-
-  useEffect(() => {
+   useEffect(() => {
     const _getTrackers = async () => {
       try {
 
@@ -44,8 +40,9 @@ const Trackers = (props) => {
     return trackers.map(track => <Tracker tracker={track} key={track.id} onSelect={onSelect}/>)
   }
 
-  const onSelect = (trackerId) => {
-    navigate(`/trackers/${trackerId}`)
+  const onSelect = (id) => {
+    console.log(">>>---------->   trackId: "+id);
+    navigate(`/trackers/${id}`)
   }
 
 
