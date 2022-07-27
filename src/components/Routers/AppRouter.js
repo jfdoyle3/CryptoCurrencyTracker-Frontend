@@ -8,7 +8,7 @@ import CurrenciesDaily from '../Cryptocurrency/CurrenciesDaily';
 import CurrenciesInterval from '../Cryptocurrency/CurrenciesInterval';
 import Trackers from "../CryptoTracker/Trackers";
 import TrackerProfile from "../CryptoTracker/TrackerProfile";
-
+import Boo from '../Cryptocurrency/Boo';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 
@@ -30,6 +30,7 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/tracker/:trackerId" element={<TrackerProfile />} />
+          <Route path="/boo" element={<Boo />} />
         </Routes>
       </div>
     </div>
