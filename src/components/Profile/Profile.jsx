@@ -4,6 +4,9 @@ import {useParams} from 'react-router-dom'
 import {AuthContext} from '../Providers/AuthProvider'
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
+import background from '../../Assets/images/cryptocurrency-background.jpg';
+
+
 
 
 const Profile = (props) => {
@@ -24,7 +27,6 @@ const Profile = (props) => {
           }
         }
       )
-      console.log(res.data);
       setTracker(res.data);
       setLoading(false);
     }
@@ -32,18 +34,15 @@ const Profile = (props) => {
     _fetchTracker();
   }, [])
 
-  console.log(auth);
+  const handleClick=()=>{
+    alert ('Click!!!')
+  }
 
   const displayProfile = () => {
     return (
       <Fragment>
-          <div style={{
-            flex: 2,
-            flexDirection: 'column',
-            color: '#F1F1F1',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
+          <div>
+            <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>{tracker.name.toUpperCase()}</h1>
           </div>
       </Fragment>
@@ -52,11 +51,18 @@ const Profile = (props) => {
 
   return (
     <div style={{
+     
       display: "flex",
       flex: "1",
       flexDirection: "column",
       alignItems: 'center',
       minHeight: '100vh',
+      height: '100vh',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundColor: '#333333',
+      color: "#f0f0f0"
     }}>
       {loading ? (
         <Spinner /> 

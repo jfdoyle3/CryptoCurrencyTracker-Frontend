@@ -1,10 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import background from '../../Assets/images/cryptocurrency-background.jpg';
 
 
 const Home = () => {
-  const navigate = useNavigate();
+
   console.log("Home - activated!!")
   const styles = {
     header: {
@@ -32,7 +31,7 @@ const handleClick=()=>{
     <div style={styles.header}>
       <div style={styles.content}>
           <h2>Cryptocurrency Tracker</h2>
-          <button type="button" onClick={handleClick}>Default</button>
+          {/* <button type="button" onClick={handleClick}>Default</button> */}
       </div>
     </div>
     

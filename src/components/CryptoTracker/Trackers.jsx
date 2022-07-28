@@ -25,7 +25,7 @@ const Trackers = (props) => {
             }
           }
         )
-        console.log(res.data)
+        console.log("Trackers: "+res.data)
         setLoading(false);
         setTrackers(res.data);
       } catch (err) {
@@ -43,7 +43,6 @@ const Trackers = (props) => {
   }
 
   const onSelect = (trackId) => {
-    console.log(">>>---------->   trackId: "+trackId);
     navigate(`/trackers/${trackId}`)
   }
 
