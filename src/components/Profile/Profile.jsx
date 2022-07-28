@@ -3,24 +3,21 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom'
 import {AuthContext} from '../Providers/AuthProvider'
 import Spinner from '../faCommon/Spinner';
-import Button from '../common/Button';
-import {faUserPlus, faUserSlash, faUserInjured, faUserClock, faPeopleArrows} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { apiHostUrl } from '../../config';
 
 
 const Profile = (props) => {
   const params = useParams();
   const [tracker, setTracker] = useState({
-    id: params.trackerId
+    id: params.trackId
   });
   const [loading, setLoading] = useState(true);
   const [auth, setAuth] = useContext(AuthContext);
-  // const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
-  // pull Tracker data from backend
+  
   useEffect(() => {
-    const _getTracker = async () => {
+    const _fetchTracker = async () => {
       const res = await axios.get(
-        `http://localhost:8080/api/trackers/${tracker.id}`,
+        `${apiHostUrl}/api/trackers/${tracker.id}`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`
@@ -32,7 +29,7 @@ const Profile = (props) => {
       setLoading(false);
     }
     setLoading(true);
-    _getTracker();
+    _fetchTracker();
   }, [])
 
   console.log(auth);

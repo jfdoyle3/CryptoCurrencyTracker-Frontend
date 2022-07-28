@@ -3,7 +3,9 @@ import {AuthContext} from '../Providers/AuthProvider';
 import Spinner from '../faCommon/Spinner';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import Tracker from './Tracker';
+import Tracker from './models/Tracker';
+import { apiHostUrl } from '../../config';
+
 
 const Trackers = (props) => {
   const [auth] = useContext(AuthContext)
@@ -16,7 +18,7 @@ const Trackers = (props) => {
       try {
 
         const res = await axios.get(
-          'http://localhost:8080/api/trackers',
+          `${apiHostUrl}/api/trackers`,
           {
             headers: {
               "Authorization": `Bearer ${auth.token}`
@@ -40,9 +42,9 @@ const Trackers = (props) => {
     return trackers.map(track => <Tracker tracker={track} key={track.id} onSelect={onSelect}/>)
   }
 
-  const onSelect = (id) => {
-    console.log(">>>---------->   trackId: "+id);
-    navigate(`/trackers/${id}`)
+  const onSelect = (trackId) => {
+    console.log(">>>---------->   trackId: "+trackId);
+    navigate(`/trackers/${trackId}`)
   }
 
 

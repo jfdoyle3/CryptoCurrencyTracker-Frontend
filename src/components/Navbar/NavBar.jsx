@@ -38,17 +38,11 @@ const NavBar = (props) => {
           justifyContent: 'flex-end'
         }}>
           <NavButton to="/" label="Home" />
-          {/* <NavButton to="/topfive" label="Top Five" />
-          <NavButton to="/currencies" label="Currencies"/>
-          <NavButton to="/dailyPrices" label="Daily Price" />
-          <NavButton to="/interval" label="Interval" /> */}
           {auth.token ? (
             <Fragment>
             <NavButton to="/trackers" label="Trackers" />
-            <NavButton to="/currencies" label="Currencies"/>
-            <NavButton to="/topfive" label="Top Five" />
-            
-            
+            {/* <NavButton to="/currencies" label="Currencies"/>
+            <NavButton to="/topfive" label="Top Five" /> */}
             </Fragment>
           ) : (
             <Fragment>

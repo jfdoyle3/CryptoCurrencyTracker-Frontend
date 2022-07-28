@@ -12,8 +12,7 @@ const Register = () => {
     username: "",
     password: "",
     confirm: "",
-    fname: "",
-    lname: "",
+    name: "",
   });
 
   // submitting context
@@ -34,8 +33,6 @@ const Register = () => {
       return;
     }
     const data = query;
-    data.name = query.fname + " " + query.lname;
-    data.cohort = parseInt(query.cohort);
     try {
       const res = await axios.post('http://localhost:8080/api/auth/signup', data)
       // alert(res.data.message);
@@ -52,13 +49,13 @@ const Register = () => {
         data
       )
       // alert(res.data.token);
-      createDeveloper(data, res.data.token);
+      createTracker(data, res.data.token);
     } catch (err) {
       alert (err.response.data.message);
     }
   }
 
-  const createDeveloper = async (data, token) => {
+  const createTracker = async (data, token) => {
     data.email = data.username;
     try {
       const res = await axios.post(

@@ -23,16 +23,16 @@ const Home = () => {
       
     }
   }
-function sayHello(){
-  navigate(`/boo`)
+const handleClick=()=>{
+  alert('Hi')
 }
 
 
   return (
     <div style={styles.header}>
       <div style={styles.content}>
-          <h2>Home</h2>
-          <button onClick={sayHello}>Default</button>
+          <h2>Cryptocurrency Tracker</h2>
+          <button type="button" onClick={handleClick}>Default</button>
       </div>
     </div>
     

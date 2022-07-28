@@ -1,9 +1,13 @@
 import React from 'react';
-import BorderCard from '../common/BorderCard';
+import BorderCard from '../../common/BorderCard';
+
 
 const Tracker = (props) => {
-
   const {name, id} = props.tracker
+
+  // const onSelect = () => {
+  //   props.onSelect(id)
+  // }
 
   return (
     <BorderCard onClick={() => props.onSelect(id)}>
