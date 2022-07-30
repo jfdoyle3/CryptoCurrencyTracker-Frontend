@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // fontawesome spinner
 
 const Button = (props) => {
-
   return (
     <button
       type={props.type || "submit"}
@@ -17,7 +17,6 @@ const Button = (props) => {
       )}
     </button>
   )
-
 }
 
 const styles = {
@@ -36,6 +35,12 @@ const styles = {
     fontWeight: "bold",
     fontFamily: "sans-serif"
   }
+}
+
+Button.propTypes = {
+  type: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool
 }
 
 export default Button;

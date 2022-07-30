@@ -1,24 +1,36 @@
-import React, {useContext} from 'react';
-import Container from '../common/Container';
-import Splash from '../common/Splash';
-import splashImg from '../../assets/splash.jpg';
-import { AuthContext } from '../Providers/AuthProvider';
+import React from 'react';
+import background from '../../assets/images/cryptocurrency-background.jpg';
+
 
 const Home = () => {
-  const [auth] = useContext(AuthContext)
+
+  console.log("Home - activated!!")
+  const styles = {
+    header: {
+      backgroundImage: `url(${background})`,
+      height: '100vh',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    },
+  
+    content: {
+      height: '100%',
+      width: '100%',
+      backgroundColor: 'rgba(50, 50, 50, .75)',
+      color: "#f0f0f0"
+      
+    }
+  }
 
   return (
-    <Container>
-      <Splash image={splashImg} style={{color: "#f1f1f1"}}>
-        <h1 style={{textShadow: '1px 1px black'}}>
-          Welcome to Expressian Car Rental!
-        </h1>
-        <h2 style={{textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000'}}>
-          All cars have Coffee holders
-        </h2>
-        <h2>{auth.token}</h2>
-      </Splash>
-    </Container>
+    <div style={styles.header}>
+      <div style={styles.content}>
+          <h2>Cryptocurrency Tracker</h2>
+          {/* <button type="button" onClick={handleClick}>Default</button> */}
+      </div>
+    </div>
+    
   )
 }
 

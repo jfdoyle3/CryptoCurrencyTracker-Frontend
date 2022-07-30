@@ -1,41 +1,46 @@
-import React, {UseState} from 'react';
-import Form from '../common/Form';
-import Input from '../common/Input';
-import FaButton from '../faCommon/FaButton';
-import InlineInputContainer from '../common/InlineInputContainer';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../Providers/AuthProvider";
+import EditProfileForm from "./EditProfileForm";
+import { apiHost } from "../../config";
 
+const UpdatedProfile = () => {
+  let navigate = useNavigate();
 
-const UpdateProfile =(props) =>{
+  const [query, setQuery] = useState({
+    name: "",
+  });
 
-  const {id , name}=props.tracker
-  
+  const [auth] = useContext(AuthContext);
 
+  const updateForm = (field, value) => {
+    setQuery({
+      ...query,
+      [field]: value,
+    });
+  };
+
+  const onSubmit = async (token) => {
+    const data = query;
+    try {
+      const res = await axios.put(`${apiHost}/api/trackers/`, data, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      navigate("/trackers");
+    } catch (err) {
+      alert(err.response.data.message);
+    }
+  };
 
   return (
-    <div>
-      <h1 style={{alignItems: "center"}}>Update Profile</h1>
-      <Form
-      // onSubmit={handleSubmit}
-      style={{
-        maxWidth: '800px',
-        width: '100%'
-      }}
-    >
-      <InlineInputContainer>
-        <Input
-          id="name"
-          placeholder="name"
-          type="name"
-          // onChange={handleChange}
-          // value={query.name}
-          required
-        />
-      </InlineInputContainer>
-      <FaButton>Save</FaButton>
-    </Form>
-  </div>
-    
-  )
-}
-
-export default UpdateProfile;
+    <EditProfileForm
+      query={query}
+      updateForm={updateForm}
+      onSubmit={onSubmit}
+    />
+  );
+};
+export default UpdatedProfile;
