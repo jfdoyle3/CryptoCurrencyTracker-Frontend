@@ -4,8 +4,9 @@ import {useParams} from 'react-router-dom'
 import {AuthContext} from '../Providers/AuthProvider'
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
-import background from '../../Assets/images/cryptocurrency-background.jpg';
-
+import background from '../../assets/images/cryptocurrency-background.jpg';
+import Button from '../common/Button';
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -16,6 +17,7 @@ const Profile = (props) => {
   });
   const [loading, setLoading] = useState(true);
   const [auth, setAuth] = useContext(AuthContext);
+  const navigate=useNavigate();
   
   useEffect(() => {
     const _fetchTracker = async () => {
@@ -34,9 +36,9 @@ const Profile = (props) => {
     _fetchTracker();
   }, [])
 
-  const handleClick=()=>{
-    alert ('Click!!!')
-  }
+  const update=()=>{
+      navigate(`/update`)
+    }
 
   const displayProfile = () => {
     return (
@@ -44,6 +46,7 @@ const Profile = (props) => {
           <div>
             <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>{tracker.name.toUpperCase()}</h1>
+            <Button style={{backgroundColor: "#04b5e5"}} onClick={update}>Edit</Button>
           </div>
       </Fragment>
     )
@@ -51,7 +54,6 @@ const Profile = (props) => {
 
   return (
     <div style={{
-     
       display: "flex",
       flex: "1",
       flexDirection: "column",

@@ -3,7 +3,7 @@ import Hi_one from "./Models/Hi_one";
 import Hi_two from "./Models/Hi_two";
 import Hi_three from "./Models/Hi_three";
 
-const Boo=()=>{
+const Test=()=>{
   return (
     <div>
       <div className="container">
@@ -18,4 +18,4 @@ const Boo=()=>{
     </div>
   )
 }
-export default Boo;
+export default Test;

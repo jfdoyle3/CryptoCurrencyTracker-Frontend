@@ -31,8 +31,7 @@ const Login = () => {
       setSubmitting(false);
       navigate('/trackers');
     } catch (err) {
-      console.error(err.response.data.message);
-      alert(err.response.data.error);
+      console.error("--->> error: "+err.response.data.message);
       setSubmitting(false);
     }
   }
