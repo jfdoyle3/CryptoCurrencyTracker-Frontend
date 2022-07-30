@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
-import EditProfileForm from "./EditProfileForm";
-import { apiHost } from "../../config";
+import EditProfileForm from "./UpdateForm";
+import { apiHostUrl } from "../../config";
 
 const UpdatedProfile = () => {
   let navigate = useNavigate();
@@ -24,7 +24,7 @@ const UpdatedProfile = () => {
   const onSubmit = async (token) => {
     const data = query;
     try {
-      const res = await axios.put(`${apiHost}/api/trackers/`, data, {
+      const res = await axios.put(`${apiHostUrl}/api/trackers/`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },

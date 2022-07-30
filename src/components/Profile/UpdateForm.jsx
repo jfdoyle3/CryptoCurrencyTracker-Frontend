@@ -4,7 +4,7 @@ import AdvButton from "../common/AdvButton";
 import Form from "../common/Form";
 import Input from "../common/Input";
 
-const EditProfileForm = (props) => {
+const UpdateForm = (props) => {
   const { updateForm, onSubmit } = props;
 
   const handleChange = (e) => {
@@ -17,7 +17,7 @@ const EditProfileForm = (props) => {
 
   return (
     <div>
-      <h1>Edit Profile</h1>
+      <h1>Update Tracker</h1>
       <Form
         onSubmit={handleSubmit}
         style={{
@@ -46,4 +46,4 @@ const EditProfileForm = (props) => {
   );
 };
 
-export default EditProfileForm;
+export default UpdateForm;
