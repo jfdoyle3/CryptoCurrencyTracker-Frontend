@@ -32,6 +32,3 @@ const Currency = (props) => {
 }
 
 export default Currency;
-
-
-// private String currency_id;
