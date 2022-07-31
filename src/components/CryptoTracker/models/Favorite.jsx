@@ -3,10 +3,30 @@ import BorderCard from "../../common/BorderCard";
 
 const Favorite=()=>{
 
+
   return(
-    <div>
-      <p>Favortie</p>
-    </div>
+    <table>
+        <tr>
+        <th></th>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Symbol</th>
+      </tr>
+        <tr>
+          <td>
+            Image
+          </td>
+          <td>1</td>
+          <td>BTC</td>
+          <td>Symbol</td>
+          <td>
+            <button
+              type="button">
+              Delete
+            </button>
+          </td>
+        </tr>
+    </table>
   )
 }
 

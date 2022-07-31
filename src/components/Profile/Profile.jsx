@@ -7,6 +7,7 @@ import { apiHostUrl } from '../../config';
 import background from '../../assets/images/cryptocurrency-background.jpg';
 import Button from '../common/Button';
 import {useNavigate} from "react-router-dom";
+import Favorites from "../CryptoTracker/Favorites"
 
 
 
@@ -47,6 +48,7 @@ const Profile = (props) => {
             <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>{tracker.name.toUpperCase()}</h1>
             <Button style={{backgroundColor: "#04b5e5"}} onClick={update}>Edit</Button>
+            <Favorites />
           </div>
       </Fragment>
     )
