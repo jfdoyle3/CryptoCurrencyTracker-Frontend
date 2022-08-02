@@ -41,6 +41,22 @@ const UpdateForm = (props) => {
         >
           Save
         </AdvButton>
+        <InlineInputContainer>
+          <Input
+            id="favorite"
+            placeholder="Favorite"
+            onChange={handleChange}
+            // value={query.name}
+          />
+        </InlineInputContainer>
+        <AdvButton
+          style={{ marginTop: "10px" }}
+          variant="primary"
+          size="lg"
+          type="submit"
+        >
+          Save
+        </AdvButton>
       </Form>
     </div>
   );

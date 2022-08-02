@@ -12,6 +12,10 @@ const Favorites=()=>{
   const [loading, setLoading] = useState(true);
   const [auth, setAuth] = useContext(AuthContext);
   
+
+  const handleDelete=(key)=>{
+   setFavorites(favorites.filter(fav => fav.ranking !== key))
+  }
   
   useEffect(() => {
     const _fetchFavorites = async () => {
@@ -32,7 +36,7 @@ const Favorites=()=>{
   }, [])
 
   const displayFavorites = () => {
-    return favorites.map(money => <Favorite favorites={money} key={money.ranking} />)
+    return favorites.map(money => <Favorite favorites={money} key={money.ranking} onDelete={handleDelete} />)
   }
 
   return(
@@ -43,6 +47,7 @@ const Favorites=()=>{
       alignItems: 'center',
       minHeight: '100vh',
     }}>
+      
       <h1>Favorites</h1>
       {loading ? 
         <Spinner /> 

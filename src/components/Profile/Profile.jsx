@@ -4,12 +4,9 @@ import {useParams} from 'react-router-dom'
 import {AuthContext} from '../Providers/AuthProvider'
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
-import background from '../../assets/images/cryptocurrency-background.jpg';
 import Button from '../common/Button';
 import {useNavigate} from "react-router-dom";
-import Favorites from "../CryptoTracker/Favorites"
-
-
+import Favorites from "../CryptoTracker/Favorites";
 
 const Profile = (props) => {
   const params = useParams();
@@ -40,6 +37,8 @@ const Profile = (props) => {
   const update=()=>{
       navigate(`/update`)
     }
+
+  
 
   const displayProfile = () => {
     return (
