@@ -17,7 +17,7 @@ const UpdateForm = (props) => {
 
   return (
     <div>
-      <h1>Update Tracker</h1>
+      <h1>Favorites</h1>
       <Form
         onSubmit={handleSubmit}
         style={{
@@ -27,8 +27,8 @@ const UpdateForm = (props) => {
       >
         <InlineInputContainer>
           <Input
-            id="name"
-            placeholder="Name"
+            id="symbol"
+            placeholder="Symbol"
             onChange={handleChange}
             // value={query.name}
           />

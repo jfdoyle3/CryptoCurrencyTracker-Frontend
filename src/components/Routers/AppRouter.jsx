@@ -6,7 +6,7 @@ import TopFive from "../Cryptocurrency/TopFive";
 import Currencies from '../Cryptocurrency/Currencies';
 import CurrenciesDaily from '../Cryptocurrency/CurrenciesDaily';
 import CurrenciesInterval from '../Cryptocurrency/CurrenciesInterval';
-import Trackers from "../CryptoTracker/Trackers";
+import Trackers from "../Tracker/Trackers";
 import Profile from "../Profile/Profile";
 import Test from '../Cryptocurrency/Test';
 import Login from '../Auth/Login';

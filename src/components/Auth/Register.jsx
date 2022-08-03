@@ -69,7 +69,7 @@ const Register = () => {
       )
       console.log(res.data);
       setAuth({token, name: res.data.name});
-      alert(res.data.id);
+     // alert(res.data.id);
       navigate('/trackers')
     } catch (err) {
       alert (err.response.data.message);
