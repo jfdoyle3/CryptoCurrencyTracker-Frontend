@@ -7,7 +7,6 @@ import { apiHostUrl } from '../../config';
 import Button from '../common/Button';
 import {useNavigate} from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
-import AddFavorite from '../Favorites/AddFavorite';
 
 const Profile = (props) => {
   const params = useParams();
@@ -39,6 +38,10 @@ const Profile = (props) => {
       navigate(`/update`)
     }
 
+  const addFavorites=()=>{
+    navigate(`/addFavorites`)
+  }
+
   
 
   const displayProfile = () => {
@@ -48,7 +51,7 @@ const Profile = (props) => {
             <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>{tracker.name.toUpperCase()}</h1>
             <Button style={{backgroundColor: "#04b5e5"}} onClick={update}>Edit</Button>
-            <AddFavorite />
+            <Button onClick={addFavorites}>Add Favorite</Button>
             <Favorites />
           </div>
       </Fragment>

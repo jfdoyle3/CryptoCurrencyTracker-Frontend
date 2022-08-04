@@ -12,6 +12,7 @@ import Test from '../Cryptocurrency/Test';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import UpdateProfile from "../Profile/UpdateProfile";
+import AddFavorites from '../Favorites/B/AddFavorites';
 
 
 const AppRouter = () => {
@@ -33,6 +34,7 @@ const AppRouter = () => {
           <Route path="/trackers/:trackId" element={<Profile />} />
           <Route path="/test" element={<Test />} />
           <Route path="/update" element={<UpdateProfile />} />
+          <Route path="/addFavorites" element={<AddFavorites />} />
         </Routes>
       </div>
     </div>

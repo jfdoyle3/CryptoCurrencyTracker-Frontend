@@ -26,7 +26,7 @@ const NewUserForm = (props) => {
       <InlineInputContainer>
         <Input
           id="name"
-          placeholder="Name"
+          placeholder="Tracker name"
           onChange={handleChange}
           value={query.name}
         />

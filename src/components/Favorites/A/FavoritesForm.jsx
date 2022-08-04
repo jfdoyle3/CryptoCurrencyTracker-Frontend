@@ -1,10 +1,10 @@
 import React from "react";
-import InlineInputContainer from "../common/InlineInputContainer";
-import AdvButton from "../common/AdvButton";
-import Form from "../common/Form";
-import Input from "../common/Input";
+import InlineInputContainer from "../../common/InlineInputContainer";
+import AdvButton from "../../common/AdvButton";
+import Form from "../../common/Form";
+import Input from "../../common/Input";
 
-const UpdateForm = (props) => {
+const FavoritesForm = (props) => {
   const { updateForm, onSubmit } = props;
 
   const handleChange = (e) => {
@@ -17,7 +17,7 @@ const UpdateForm = (props) => {
 
   return (
     <div>
-      <h1>Favorites</h1>
+      <h1>Add Favorite</h1>
       <Form
         onSubmit={handleSubmit}
         style={{
@@ -28,7 +28,7 @@ const UpdateForm = (props) => {
         <InlineInputContainer>
           <Input
             id="symbol"
-            placeholder="Symbol"
+            placeholder="symbol"
             onChange={handleChange}
             // value={query.name}
           />
@@ -46,4 +46,4 @@ const UpdateForm = (props) => {
   );
 };
 
-export default UpdateForm;
+export default FavoritesForm;

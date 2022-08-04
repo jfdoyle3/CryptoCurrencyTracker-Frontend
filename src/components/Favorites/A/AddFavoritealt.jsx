@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import FavoritesForm from './FavoritesForm';
 import { apiHostUrl } from '../../config';
 
-const AddFavorite = () => {
+const AddFavoritealt = () => {
 
  
   const [query, setQuery] = useState({
@@ -57,4 +57,4 @@ const AddFavorite = () => {
   )
 }
 
-export default AddFavorite;
+export default AddFavoritealt;

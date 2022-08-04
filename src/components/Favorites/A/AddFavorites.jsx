@@ -1,15 +1,14 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../Providers/AuthProvider";
-import UpdateProfileForm from "./UpdateForm";
-import { apiHostUrl } from "../../config";
+import { AuthContext } from "../../Providers/AuthProvider";
+import FavoritesForm from "./FavoritesForm";
+import { apiHostUrl } from "../../../config";
 
-const UpdatedProfile = () => {
+const AddFavorite = (props) => {
   const navigate = useNavigate();
-
   const [query, setQuery] = useState({
-    name: "",
+    symbol: '',
   });
 
   const [auth] = useContext(AuthContext);
@@ -22,13 +21,15 @@ const UpdatedProfile = () => {
   };
 
   const onSubmit = async (token) => {
-    const data = query;
+    const symbol = query.symbol;
+    console.log(symbol);
     try {
-      const res = await axios.put(`${apiHostUrl}/api/trackers/`, data, {
+      const res = await axios.post(`${apiHostUrl}/api/trackers/addFavorite/${symbol}`,  {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       });
+      console.log('posted');
       navigate("/trackers");
     } catch (err) {
       alert(err.response.data.message);
@@ -36,11 +37,11 @@ const UpdatedProfile = () => {
   };
 
   return (
-    <UpdateProfileForm
+    <FavoritesForm
       query={query}
       updateForm={updateForm}
       onSubmit={onSubmit}
     />
   );
 };
-export default UpdatedProfile;
+export default AddFavorite;
