@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { AuthContext } from "../Providers/AuthProvider";
 import FavoritesForm from "./FavoritesForm";
-import { apiHostUrl } from "../../../config";
+import { apiHostUrl } from "../../config";
 
 const AddFavorite = (props) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState({
-    symbol: '',
+    currency: '',
   });
 
   const [auth] = useContext(AuthContext);
@@ -21,15 +21,13 @@ const AddFavorite = (props) => {
   };
 
   const onSubmit = async (token) => {
-    const symbol = query.symbol;
-    console.log(symbol);
+    const symbol = query;
     try {
-      const res = await axios.post(`${apiHostUrl}/api/trackers/addFavorite/${symbol}`,  {
+      const res = await axios.post(`${apiHostUrl}/api/trackers/addFavorite/`,symbol,  {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       });
-      console.log('posted');
       navigate("/trackers");
     } catch (err) {
       alert(err.response.data.message);

@@ -1,8 +1,8 @@
 import React from "react";
-import InlineInputContainer from "../../common/InlineInputContainer";
-import AdvButton from "../../common/AdvButton";
-import Form from "../../common/Form";
-import Input from "../../common/Input";
+import InlineInputContainer from "../common/InlineInputContainer";
+import AdvButton from "../common/AdvButton";
+import Form from "../common/Form";
+import Input from "../common/Input";
 
 const FavoritesForm = (props) => {
   const { updateForm, onSubmit } = props;
@@ -27,8 +27,8 @@ const FavoritesForm = (props) => {
       >
         <InlineInputContainer>
           <Input
-            id="symbol"
-            placeholder="symbol"
+            id="currency"
+            placeholder="Symbol"
             onChange={handleChange}
             // value={query.name}
           />
