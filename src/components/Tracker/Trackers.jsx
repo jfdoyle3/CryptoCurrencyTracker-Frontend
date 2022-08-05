@@ -28,15 +28,29 @@ const Trackers = (props) => {
         console.log("Trackers: "+res.data)
         setLoading(false);
         setTrackers(res.data);
+        _getCurrencies();
       } catch (err) {
         console.log(err)
       }
-
-
     }
     setLoading(true);
     _getTrackers();
   },[auth.token])
+
+  const _getCurrencies= async ()=>{
+    try{
+        const res = await axios.get(
+          `${apiHostUrl}/api/currency/`,
+          {
+            headers: {
+              "Authorization": `Bearer ${auth.token}`
+            }
+          }
+        )
+    } catch (err){
+      console.log(err)
+    }
+}
 
   const displayTrackers = () => {
     return trackers.map(track => <Tracker tracker={track} key={track.id} onSelect={onSelect}/>)

@@ -10,6 +10,7 @@ const UpdatedProfile = () => {
 
   const [query, setQuery] = useState({
     name: "",
+    signature: ""
   });
 
   const [auth] = useContext(AuthContext);
@@ -23,6 +24,7 @@ const UpdatedProfile = () => {
 
   const onSubmit = async (token) => {
     const data = query;
+    console.log(data);
     try {
       const res = await axios.put(`${apiHostUrl}/api/trackers/`, data, {
         headers: {

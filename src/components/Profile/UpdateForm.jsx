@@ -33,6 +33,14 @@ const UpdateForm = (props) => {
             // value={query.name}
           />
         </InlineInputContainer>
+        <InlineInputContainer>
+          <Input
+            id="signature"
+            placeholder="Signature"
+            onChange={handleChange}
+            // value={query.name}
+          />
+        </InlineInputContainer>
         <AdvButton
           style={{ marginTop: "10px" }}
           variant="primary"

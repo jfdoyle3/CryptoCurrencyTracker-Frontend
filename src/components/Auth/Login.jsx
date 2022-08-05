@@ -3,6 +3,7 @@ import axios from 'axios';
 import {AuthContext} from '../Providers/AuthProvider';
 import {useNavigate} from 'react-router-dom';
 import LoginForm from './LoginForm';
+import {apiHostUrl} from "../../config";
 
 const Login = () => {
 
@@ -26,7 +27,7 @@ const Login = () => {
     // submit query to backend to login.
     setSubmitting(true);
     try {
-      const res = await axios.post('http://localhost:8080/api/auth/signin', query);
+      const res = await axios.post(`${apiHostUrl}/api/auth/signin`, query);
       setAuth({...auth, token: res.data.token});
       setSubmitting(false);
       navigate('/trackers');
