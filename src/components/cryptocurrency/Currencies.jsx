@@ -1,19 +1,27 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import axios from 'axios';
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
 import  Currency from './Models/Currency';
+import { AuthContext } from '../Providers/AuthProvider';
 
 
 const Currencies = () => {
   const[currencies,setCurrencies]=useState([]);
   const [loading, setLoading]=useState(true); 
+  const [auth, setAuth] = useContext(AuthContext);
 
   useEffect(()=> {
     console.log("Currencies - use Effect Acitvated!!!");
     const _getAllCurrencies=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/currency/`);
+        const res=await axios.get(`${apiHostUrl}/api/currency/`,
+        {
+          headers:{
+            Authorization: `Bearer ${auth.token}`
+          }
+        })
+        ;
         console.log(res.data);
         setLoading(false);
         setCurrencies(res.data);
