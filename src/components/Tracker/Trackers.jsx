@@ -5,6 +5,8 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import Tracker from './models/Tracker';
 import { apiHostUrl } from '../../config';
+import background from '../../assets/images/cryptonet.jpg';
+
 
 
 const Trackers = (props) => {
@@ -60,21 +62,39 @@ const Trackers = (props) => {
     navigate(`/trackers/${trackId}`)
   }
 
-
-  return (
-    <div style={{
+  const styles = {
+    header: {
+      backgroundImage: `url(${background})`,
+      height: '100vh',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+     
+    },
+  
+    content: {
       display: "flex",
       flex: "1",
       flexDirection: "column",
       alignItems: 'center',
       minHeight: '100vh',
-    }}>
-      <h1>Trackers</h1>
-      {loading ? 
-        <Spinner /> 
-      :
-        displayTrackers()
-      }
+      height: '100%',
+      width: '100%',
+      backgroundColor: 'rgba(50, 50, 50, .75)',      
+    }
+  }
+
+
+  return (
+    <div style={styles.header}>
+      <div style={styles.content}>
+        <h1>Trackers</h1>
+        {loading ? 
+          <Spinner /> 
+        :
+          displayTrackers()
+        }
+      </div>
     </div>
   )
 }

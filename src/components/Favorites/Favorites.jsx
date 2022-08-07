@@ -36,7 +36,7 @@ const Favorites=()=>{
   }, [])
 
   const displayFavorites = () => {
-    return favorites.map(money => <Favorite favorites={money} key={money.ranking} onDelete={handleDelete} />)
+    return favorites.map(fave => <Favorite favorites={fave} key={fave.ranking} onDelete={handleDelete} />)
   }
 
   return(
@@ -49,11 +49,20 @@ const Favorites=()=>{
     }}>
       
       <h1>Favorites</h1>
-      {loading ? 
+      <table>
+            <tr>
+              <th></th>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Symbol</th>
+            </tr>
+            {loading ? 
         <Spinner /> 
       :
         displayFavorites()
       }
+      </table>
+
     </div>
   )
 }

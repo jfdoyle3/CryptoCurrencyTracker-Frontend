@@ -24,14 +24,7 @@ const Favorite = (props) => {
   }
 
   return (
-    <table>
-      <tr>
-        <th></th>
-        <th>Rank</th>
-        <th>Symbol</th>
-        <th>Name</th>
-      </tr>
-        <tr key={ranking}>
+         <tr key={ranking}>
           <td>
           <img src={logoUrl} width={25} height={25}  alt={name} />
           </td>
@@ -45,7 +38,6 @@ const Favorite = (props) => {
             </button>
           </td>
         </tr>
-    </table>
   )
 }
 
