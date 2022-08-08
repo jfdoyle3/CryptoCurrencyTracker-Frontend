@@ -52,7 +52,7 @@ const Profile = (props) => {
             <h1>Name:&emsp;{tracker.name.toUpperCase()}</h1>
             <h2>Signature:&emsp;{tracker.signature}</h2>
             <Button style={{backgroundColor: "#04b5e5"}} onClick={update}>Edit</Button>
-            <Button onClick={addFavorites}>Add Favorite</Button>
+            {/* <Button onClick={addFavorites}>Add Favorite</Button> */}
             <Favorites />
           </div>
       </Fragment>

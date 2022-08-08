@@ -1,9 +1,31 @@
-import React from 'react';
+import axios from 'axios';
+import React, {useContext, useState} from 'react';
+import { apiHostUrl } from '../../../config';
 import "../../../styling/CurrencyTable.css";
+import { AuthContext } from "../../Providers/AuthProvider";
+
 
 const Currency = (props) => {
 
     const{name,ranking,logoUrl,symbol}=props.currencyInfo
+    const[auth]=useContext(AuthContext);
+    const [favorite] = useState({
+      currency: symbol,
+    });
+
+    const addFavorite=async()=>{
+      try{
+        const res=await axios.post(`${apiHostUrl}/api/trackers/addFavorite/`,favorite,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        });
+        alert('Added favorite');
+      } catch (err){
+        alert(err.response.data.message);
+      }
+    };
 
   return (
           <tr key={ranking}>
@@ -14,6 +36,7 @@ const Currency = (props) => {
             <td>{symbol}</td>
             <td>{name}</td>
             <td>
+              <button onClick={addFavorite}>Add Favorite</button>
             </td>
           </tr>
   )

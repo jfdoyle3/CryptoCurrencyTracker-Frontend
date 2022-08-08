@@ -53,8 +53,8 @@ const Favorites=()=>{
             <tr>
               <th></th>
               <th>Rank</th>
-              <th>Name</th>
               <th>Symbol</th>
+              <th>Name</th>
             </tr>
             {loading ? 
         <Spinner /> 
