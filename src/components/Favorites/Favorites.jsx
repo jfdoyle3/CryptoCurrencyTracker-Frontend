@@ -4,6 +4,8 @@ import { apiHostUrl } from "../../config";
 import Favorite from "./models/Favorite";
 import {AuthContext} from '../Providers/AuthProvider';
 import Spinner from '../faCommon/Spinner';
+import BorderCard from '../common/BorderCard'
+import "../../styling/Table.css";
 
 
 const Favorites=()=>{
@@ -48,6 +50,10 @@ const Favorites=()=>{
       minHeight: '100vh',
     }}>
       
+      <BorderCard style={{
+        alignItems: 'center',
+        alignContent: 'center'
+      }}>
       <h1>Favorites</h1>
       <table>
             <tr>
@@ -62,7 +68,7 @@ const Favorites=()=>{
         displayFavorites()
       }
       </table>
-
+      </BorderCard>
     </div>
   )
 }

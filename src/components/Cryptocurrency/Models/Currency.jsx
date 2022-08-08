@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, {useContext, useState} from 'react';
 import { apiHostUrl } from '../../../config';
-import "../../../styling/CurrencyTable.css";
+import "../../../styling/Table.css";
 import { AuthContext } from "../../Providers/AuthProvider";
+import AdvButton from '../../common/AdvButton';
 
 
 const Currency = (props) => {
@@ -21,7 +22,7 @@ const Currency = (props) => {
             Authorization: `Bearer ${auth.token}`,
           },
         });
-        alert('Added favorite');
+        alert(`Added: ${name}`);
       } catch (err){
         alert(err.response.data.message);
       }
@@ -30,13 +31,13 @@ const Currency = (props) => {
   return (
           <tr key={ranking}>
             <td>
-            <img src={logoUrl} width={25} height={25}  alt={name} />
+              <img src={logoUrl} width={25} height={25}  alt={name} />
             </td>
             <td>{ranking}</td>
             <td>{symbol}</td>
             <td>{name}</td>
             <td>
-              <button onClick={addFavorite}>Add Favorite</button>
+              <AdvButton style={{backgroundColor: "#04b5e5"}} onClick={addFavorite}>Favorite</AdvButton>
             </td>
           </tr>
   )

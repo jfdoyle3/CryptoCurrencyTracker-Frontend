@@ -9,8 +9,8 @@ const UpdatedProfile = () => {
   const navigate = useNavigate();
 
   const [query, setQuery] = useState({
-    name: "",
-    signature: ""
+    name: '',
+    signature: ''
   });
 
   const [auth] = useContext(AuthContext);
