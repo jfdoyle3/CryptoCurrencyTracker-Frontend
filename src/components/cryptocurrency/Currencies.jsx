@@ -38,27 +38,29 @@ const Currencies = () => {
     return currencies.map(info => <Currency currencyInfo={info} key={info.ranking} />)
   }
 
-  // const onSelect = (devId) => {
-  //   navigate(`/developers/${devId}`)
-  // }
-
   return (
-
-    <div style={{
-      display: "flex",
-      flex: "1",
-      flexDirection: "column",
-      alignItems: 'center',
-      minHeight: '100vh',
-    }}>
-      <h1>Currencies</h1>
-      {loading ? 
+    
+     <div style={{
+       display: "flex",
+       flex: "1",
+       flexDirection: "column",
+       alignItems: 'center',
+       minHeight: '100vh',
+     }}> 
+      <table>
+            <tr>
+              <th></th>
+              <th>Rank</th>
+              <th>Symbol</th>
+              <th>Name</th>
+            </tr>
+            {loading ? 
         <Spinner /> 
       :
         displayCurrencies()
       }
+      </table>
     </div>
-    
   )
 }
 

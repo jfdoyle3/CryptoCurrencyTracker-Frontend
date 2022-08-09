@@ -29,7 +29,6 @@ const Favorites=()=>{
           }
         }
       )
-      console.log(res.data.favorites);
       setFavorites(res.data.favorites);
       setLoading(false);
     }
@@ -50,10 +49,6 @@ const Favorites=()=>{
       minHeight: '100vh',
     }}>
       
-      <BorderCard style={{
-        alignItems: 'center',
-        alignContent: 'center'
-      }}>
       <h1>Favorites</h1>
       <table>
             <tr>
@@ -68,7 +63,6 @@ const Favorites=()=>{
         displayFavorites()
       }
       </table>
-      </BorderCard>
     </div>
   )
 }
