@@ -1,19 +1,27 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import axios from 'axios';
 import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
 import  CurrencyDaily from './Models/CurrencyDaily';
+import { AuthContext } from '../Providers/AuthProvider';
 
 
 const CurrenciesDaily = () => {
   const[currenciesDaily,setCurrenciesDaily]=useState([]);
   const [loading, setLoading]=useState(true); 
+  const [auth, setAuth]=useContext(AuthContext);
 
   useEffect(()=> {
     console.log("CurrenciesDaily - use Effect Acitvated!!!");
     const _getAllCurrencies=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/getDailyPrice/btc`);
+        const res=await axios.get(`${apiHostUrl}/api/getDailyPrice/BTC`,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`
+          }
+
+        });
         console.log(res.data);
         setLoading(false);
         setCurrenciesDaily(res.data);

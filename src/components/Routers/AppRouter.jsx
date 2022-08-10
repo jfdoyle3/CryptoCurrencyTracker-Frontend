@@ -30,6 +30,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/trackers/:trackId" element={<Profile />} />
           <Route path="/update" element={<UpdateProfile />} />
+          <Route path="/daily" element={<CurrenciesDaily />} />
         </Routes>
       </div>
     </div>

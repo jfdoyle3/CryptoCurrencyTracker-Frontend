@@ -20,8 +20,7 @@ const Currencies = () => {
           headers:{
             Authorization: `Bearer ${auth.token}`
           }
-        })
-        ;
+        });
         console.log(res.data);
         setLoading(false);
         setCurrencies(res.data);
