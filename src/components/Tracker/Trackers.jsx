@@ -80,7 +80,8 @@ const Trackers = (props) => {
       minHeight: '100vh',
       height: '100%',
       width: '100%',
-      backgroundColor: 'rgba(50, 50, 50, .75)',      
+      backgroundColor: 'rgba(50, 50, 50, .75)', 
+      color: "#f0f0f0"     
     }
   }
 
