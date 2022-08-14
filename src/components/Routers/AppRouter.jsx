@@ -11,7 +11,7 @@ import Profile from "../Profile/Profile";
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import UpdateProfile from "../Profile/UpdateProfile";
-import CryptocurrencyProfile from '../Cryptocurrency/CryptocurrencyProfile';
+import CurrencyProfile from '../Cryptocurrency/CurrencyProfile';
 
 const AppRouter = () => {
   
@@ -32,7 +32,7 @@ const AppRouter = () => {
           <Route path="/trackers/:trackId" element={<Profile />} />
           <Route path="/update" element={<UpdateProfile />} />
           <Route path="/daily" element={<CurrenciesDaily />} />
-          <Route path="/currencyProfile" element={<CryptocurrencyProfile />} />
+          <Route path="/currencyProfile" element={<CurrencyProfile />} />
        </Routes>
       </div>
     </div>

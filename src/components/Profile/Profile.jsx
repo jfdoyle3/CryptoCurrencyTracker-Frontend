@@ -63,7 +63,7 @@ const Profile = (props) => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      backgroundColor: '#333333',
+      backgroundColor: '#5c5c5c',
       color: "#f0f0f0"
     }}>
       {loading ? (

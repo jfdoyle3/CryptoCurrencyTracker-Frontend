@@ -6,16 +6,17 @@ import  CurrencyDaily from './Models/CurrencyDaily';
 import { AuthContext } from '../Providers/AuthProvider';
 
 
-const CurrenciesDaily = () => {
-  const[currenciesDaily,setCurrenciesDaily]=useState([]);
+const CurrenciesDaily = (props) => {
+   const[currenciesDaily,setCurrenciesDaily]=useState([]);
   const [loading, setLoading]=useState(true); 
   const [auth, setAuth]=useContext(AuthContext);
+  const staticSymbol="btc"; 
 
   useEffect(()=> {
     console.log("CurrenciesDaily - use Effect Acitvated!!!");
-    const _getAllCurrencies=async()=>{
+    const _getDailyPrice=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/getDailyPrice/BTC`,
+        const res=await axios.get(`${apiHostUrl}/api/currency/dailyPrice/${staticSymbol}`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`
@@ -31,10 +32,10 @@ const CurrenciesDaily = () => {
 
     }
     setLoading(true)
-    _getAllCurrencies();
+    _getDailyPrice();
   },[])
 
-  const displayCurrencies = () => {
+  const displayDaily = () => {
     return currenciesDaily.map(info => <CurrencyDaily currencyDaily={info} key={info.ranking} />)
   }
 
@@ -52,10 +53,11 @@ const CurrenciesDaily = () => {
       minHeight: '100vh',
     }}>
       <h1>Currencies</h1>
+      <h1>{currenciesDaily[0].symbol}</h1>
       {loading ? 
         <Spinner /> 
       :
-        displayCurrencies()
+        displayDaily()
       }
     </div>
     

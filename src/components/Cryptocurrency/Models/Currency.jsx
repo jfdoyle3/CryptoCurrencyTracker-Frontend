@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useContext, useState} from 'react';
+import { Link } from 'react-router-dom';
 import { apiHostUrl } from '../../../config';
 import "../../../styling/Table.css";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -28,6 +29,8 @@ const Currency = (props) => {
       }
     };
 
+
+
   return (
           <tr key={ranking}>
             <td>
@@ -35,7 +38,7 @@ const Currency = (props) => {
             </td>
             <td>{ranking}</td>
             <td>{symbol}</td>
-            <td>{name}</td>
+            <td><Link to="/currencyProfile">{name}</Link></td>
             <td>
               <AdvButton style={{backgroundColor: "#04b5e5"}} onClick={addFavorite}>Favorite</AdvButton>
             </td>

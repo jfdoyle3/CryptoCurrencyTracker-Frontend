@@ -80,12 +80,12 @@ const Trackers = (props) => {
       minHeight: '100vh',
       height: '100%',
       width: '100%',
-      backgroundColor: 'rgba(50, 50, 50, .75)', 
-      color: "#f0f0f0"     
+      // backgroundColor: 'rgba(100, 100, 100, .50)', 
+      color: "#f0f0f0",
+      // textShadow: '2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
+          
     }
   }
-
-
   return (
     <div style={styles.header}>
       <div style={styles.content}>
