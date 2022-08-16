@@ -4,14 +4,17 @@ import Spinner from '../faCommon/Spinner';
 import { apiHostUrl } from '../../config';
 import  Currency from './Models/Currency';
 import { AuthContext } from '../Providers/AuthProvider';
+import { CurrencyContext } from '../Providers/CurrenciesProvider';
 
 
 const Currencies = () => {
   const[currencies,setCurrencies]=useState([]);
   const [loading, setLoading]=useState(true); 
   const [auth, setAuth] = useContext(AuthContext);
+  
 
   useEffect(()=> {
+
     console.log("Currencies - use Effect Acitvated!!!");
     const _getAllCurrencies=async()=>{
       try{
@@ -21,6 +24,7 @@ const Currencies = () => {
             Authorization: `Bearer ${auth.token}`
           }
         });
+
         console.log(res.data);
         setLoading(false);
         setCurrencies(res.data);

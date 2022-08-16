@@ -11,6 +11,7 @@ const Currency = (props) => {
 
     const{name,ranking,logoUrl,symbol}=props.currencyInfo
     const[auth]=useContext(AuthContext);
+    
     const [favorite] = useState({
       currency: symbol,
     });
