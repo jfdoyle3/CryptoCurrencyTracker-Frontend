@@ -3,6 +3,7 @@ import CurrenciesDaily from "../Cryptocurrency/CurrenciesDaily";
  import { CurrenciesContext } from "../Providers/CurrenciesProvider";
 import CurrencyHeader from "./CurrencyHeader";
 import { useLocation } from "react-router-dom";
+import  Container  from "../common/Container";
 
 
 
@@ -16,12 +17,12 @@ const CurrencyProfile=(props)=>{
  
     // if currency not found return 404
     return (
-
+        <Container>
         <div>
-            <h1> SYMBOL!!!! {currency.symbol}</h1>
-             <CurrencyHeader/>
+             <CurrencyHeader a={currency}/>
             <CurrenciesDaily z={currency} />
         </div>
+        </Container>
     )
 }
 
