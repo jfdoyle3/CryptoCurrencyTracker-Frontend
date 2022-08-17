@@ -11,7 +11,7 @@ import Profile from "../Profile/Profile";
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import UpdateProfile from "../Profile/UpdateProfile";
-import CurrencyProfile from '../Cryptocurrency/CurrencyProfile';
+import CurrencyProfile from '../Profile/CurrencyProfile';
 
 const AppRouter = () => {
   

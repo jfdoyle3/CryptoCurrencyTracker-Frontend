@@ -30,7 +30,7 @@ const Login = () => {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`, query);
       setAuth({...auth, token: res.data.token});
       setSubmitting(false);
-      navigate('/trackers');
+      navigate(`/trackers/${res.data.id}`);
     } catch (err) {
       console.error("--->> error: "+err.response.data.message);
       setSubmitting(false);

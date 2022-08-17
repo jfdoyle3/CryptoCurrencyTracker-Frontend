@@ -6,16 +6,17 @@ import  CurrencyDaily from './Models/CurrencyDaily';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const CurrenciesDaily = (props) => {
-  
+  const {symbol}=props.z;
   const[currenciesDaily,setCurrenciesDaily]=useState([]);
   const [loading, setLoading]=useState(true); 
   const [auth, setAuth]=useContext(AuthContext);
-  const staticSymbol="btc"; 
+  //const staticSymbol="btc"; 
   useEffect(()=> {
     console.log("CurrenciesDaily - use Effect Acitvated!!!");
+   
     const _getDailyPrice=async()=>{
       try{
-        const res=await axios.get(`${apiHostUrl}/api/currency/getDailyPrice/${staticSymbol}`,
+        const res=await axios.get(`${apiHostUrl}/api/currency/dailyPrice/${symbol}`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`

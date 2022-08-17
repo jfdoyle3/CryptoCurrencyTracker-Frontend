@@ -43,9 +43,6 @@ const NavBar = (props) => {
              
               <NavButton to="/trackers" label="Trackers" />
               <NavButton to="/currencies" label="Currencies"/>
-              <NavButton to="/daily" label="Daily" />
-              <NavButton to="/currencyProfile" label="Coin Profile" />
-              {/* <NavButton to="/topfive" label="Top Five" /> */}
             </Fragment>
           ) : (
             <Fragment>
