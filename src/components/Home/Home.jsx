@@ -1,9 +1,12 @@
 import React from 'react';
-import background from '../../assets/images/cryptocurrency-background.jpg';
+import background from '../../assets/images/cryptocurrency_matrix.jpg';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Button from '../common/Button';
+
 
 
 const Home = () => {
-
+  let clicked=false;
   console.log("Home - activated!!")
   const styles = {
     header: {
@@ -31,13 +34,39 @@ const Home = () => {
     }
   }
 
+  const removeFriend = async () => {
+    alert('but why');
+  }
+
   return (
     <div style={styles.header}>
       <div style={styles.content}>
         <font size="7">
           <center><b>Cryptocurrency Tracker</b></center>
         </font>
-          {/* <button type="button" onClick={handleClick}>Default</button> */}
+        {clicked ?(
+        <Button 
+            style={{
+              width: 'auto',
+              color: '#F1F1F1',
+            }}
+            onClick={removeFriend}
+          >
+          <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/>        
+        </Button>)
+          :
+         (<Button 
+          style={{
+            width: 'auto',
+            color: '#F0F0F0',
+
+          }}
+          onClick={removeFriend}
+        >
+        <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/>        
+      </Button>
+          )}
+
       </div>
     </div>
     

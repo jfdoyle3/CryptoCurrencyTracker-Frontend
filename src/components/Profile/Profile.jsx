@@ -7,6 +7,7 @@ import { apiHostUrl } from '../../config';
 import Button from '../common/Button';
 import {useNavigate} from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
+import image from '../../assets/images/cryptonet.jpg';
 
 const Profile = (props) => {
   const params = useParams();
@@ -41,7 +42,7 @@ const Profile = (props) => {
     const displayProfile = () => {
     return (
       <Fragment>
-          <div>
+           <div>
             <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>Name:&emsp;{tracker.name.toUpperCase()}</h1>
             <h2>Signature:&emsp;{tracker.signature}</h2>
