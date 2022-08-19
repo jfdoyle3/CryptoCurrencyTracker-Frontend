@@ -36,6 +36,7 @@ const Home = () => {
 
   const removeFriend = async () => {
     alert('but why');
+    
   }
 
   return (

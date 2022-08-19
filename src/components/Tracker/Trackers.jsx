@@ -10,7 +10,7 @@ import background from '../../assets/images/cryptonet.jpg';
 
 
 const Trackers = (props) => {
-  const [auth] = useContext(AuthContext)
+  const [auth] = useContext(AuthContext);
   const [trackers, setTrackers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
