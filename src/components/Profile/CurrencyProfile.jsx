@@ -46,8 +46,8 @@ const CurrencyProfile=(props)=>{
     return (
         
         <div>
-            <CurrencyHeader a={currency} b={tracker}/>
-            <CurrenciesDaily z={currency} c={tracker}/>
+            <CurrencyHeader crypto={currency} user={tracker}/>
+            <CurrenciesDaily crypto={currency} user={tracker}/>
         </div>
     
     )

@@ -1,18 +1,16 @@
 import React from 'react';
 import background from '../../assets/images/cryptocurrency_matrix.jpg';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import Button from '../common/Button';
-import '../../styling/Home.css';
 
 
 
 const Home = () => {
-  let clicked=false;
   console.log("Home - activated!!")
+
+
+
   const styles = {
     header: {
       backgroundImage: `url(${background})`,
-      // height: '100vh',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -21,9 +19,6 @@ const Home = () => {
     },
   
     content: {
-      // height: '100%',
-      // width: '100%',
-      // backgroundColor: 'rgba(50, 50, 50, .75)',
       color: '#f0f0f0',
       width:'300px',
       height:'200px',
@@ -35,19 +30,12 @@ const Home = () => {
     }
   }
 
-  const removeFriend = async () => {
-    alert('but why');
-    
-  }
-
   return (
     <div style={styles.header}>
       <div style={styles.content}>
         <font size="7">
           <center><b>Cryptocurrency Tracker</b></center>
         </font>
-        
-
       </div>
     </div>
     
