@@ -10,7 +10,6 @@ const CurrenciesDaily = (props) => {
   const[currenciesDaily,setCurrenciesDaily]=useState([]);
   const [loading, setLoading]=useState(true); 
   const [auth, setAuth]=useContext(AuthContext);
-  //const staticSymbol="btc"; 
   useEffect(()=> {
     console.log("CurrenciesDaily - use Effect Acitvated!!!");
    
