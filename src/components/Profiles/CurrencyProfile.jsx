@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState}from "react";
-import CurrenciesDaily from "../Cryptocurrency/CurrenciesDaily";
+import CurrenciesDaily from "../Cryptocurrencies/CurrenciesDaily";
 import { CurrenciesContext } from "../Providers/CurrenciesProvider";
 import CurrencyHeader from "./CurrencyHeader";
 import { useLocation } from "react-router-dom";

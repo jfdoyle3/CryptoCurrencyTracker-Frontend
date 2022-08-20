@@ -2,16 +2,17 @@ import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import Navbar from "../Navbar/NavBar";
 import Home from "../Home/Home";
-import TopFive from "../Cryptocurrency/TopFive";
-import Currencies from '../Cryptocurrency/Currencies';
-import CurrenciesDaily from '../Cryptocurrency/CurrenciesDaily';
-import CurrenciesInterval from '../Cryptocurrency/CurrenciesInterval';
-import Trackers from "../Tracker/Trackers";
-import Profile from "../Profile/Profile";
+import TopFive from "../Cryptocurrencies/TopFive";
+import Currencies from '../Cryptocurrencies/Currencies';
+import CurrenciesDaily from '../Cryptocurrencies/CurrenciesDaily';
+import CurrenciesInterval from '../Cryptocurrencies/CurrenciesInterval';
+import Trackers from "../Trackers/Trackers";
+import Profile from "../Profiles/Profile";
+import UpdateProfile from "../Profiles/UpdateProfile";
+import CurrencyProfile from '../Profiles/CurrencyProfile';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
-import UpdateProfile from "../Profile/UpdateProfile";
-import CurrencyProfile from '../Profile/CurrencyProfile';
+
 
 const AppRouter = () => {
   

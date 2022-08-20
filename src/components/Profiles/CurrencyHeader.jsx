@@ -32,10 +32,10 @@ const CurrencyHeader=(props)=>{
                 <h1>Symbol: {symbol}</h1>
                 <h1>Name: {name}</h1>         
                 <div className={style}>
-        <button className="button" onClick={liked}>
-          Click me!
-        </button>
-      </div>
+                    <Button onClick={liked}>
+                        <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/>
+                    </Button>
+                </div>
             </div>
         </Container>  
           )

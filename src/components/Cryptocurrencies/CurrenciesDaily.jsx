@@ -6,7 +6,7 @@ import  CurrencyDaily from './Models/CurrencyDaily';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const CurrenciesDaily = (props) => {
-  const {symbol}=props.z;
+  const {symbol}=props.crypto;
   const[currenciesDaily,setCurrenciesDaily]=useState([]);
   const [loading, setLoading]=useState(true); 
   const [auth, setAuth]=useContext(AuthContext);
