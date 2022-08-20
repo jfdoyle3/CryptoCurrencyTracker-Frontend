@@ -1,78 +1,30 @@
 import React, {useContext, useState}from "react";
 import { CurrenciesContext } from "../Providers/CurrenciesProvider";
 import  Container  from "../common/Container";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Button from '../common/Button';
 import { AuthContext } from "../Providers/AuthProvider";
+import Ratings from '../Ratings/Ratings';
 // import '../../styling/CurrencyHeader.css';
 
 
 const CurrencyHeader=(props)=>{
-    const [isLiked, setIsLiked] = useState(false);
-    const [isUnLiked, setIsUnLiked] = useState(false);
-
-    const {id, name,ranking,logoUrl,symbol}=props.crypto;
+    const {id, name,logoUrl,symbol}=props.crypto;
     const {id: trackerId}=props.user;
-    const [currencies]= useContext(CurrenciesContext);
-    const currency=currencies.data.find(cur => cur.symbol===props.symbol);
-    const {auth}=useContext(AuthContext);
-    console.log("cID: "+id);
-    console.log("trackID: "+trackerId);
-    const like=()=>{
-        
-        setIsLiked(current => !current);
-        if (isLiked){
-            alert(`You Liked me!!- ${isLiked}`)
-            // axios to post a like
-        }
-
-        if(!isLiked){
-            alert(`Cleared- ${isLiked}`)
-            // axios to remove/delete like
-        }
-    }
-
-    const unlike=()=>{
-        
-        setIsUnLiked(current => !current);
-        if (isUnLiked && !unlike){
-            setIsUnLiked(false);
-            alert(`You UnLiked me, why?!!- ${isUnLiked}`)
-            // axios to post a unlike
-        }
-
-        if(!isUnLiked){
-            alert(`Cleared- ${isUnLiked}`)
-            // axios to remove/delete unlike
-        }
-    }
-
+    const [rating]=useState({
+        currencyId: id,
+        trackerId: trackerId
+    });
  
     return (
-    <Container>
-            <div style={{display: "flex"}}>
-                <img src={logoUrl} width={100} height={100} alt={name} />
-                <h1>Symbol: {symbol}</h1>
-                <h1>Name: {name}</h1>         
-                <div
-                    style={{
-                    color: isLiked ? 'black' : 'green' ,
-                    }}
-                    onClick={like}
-                >
-                 <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/> 
-                </div>
-                <div
-                    style={{
-                    color: isUnLiked ? 'black' : 'red' ,
-                    }}
-                    onClick={unlike}
-                > 
-                 <FontAwesomeIcon icon="fa-solid fa-thumbs-down"/> 
-                </div>
-            </div>
-        </Container>  
-          )
+			<Container>
+					<div style={{display: "flex"}}>
+							<img src={logoUrl} width={100} height={100} alt={name} />
+							<h1>Symbol: {symbol}</h1>
+							<h1>Name: {name}</h1>         
+							<Ratings rate={rating}/>
+					</div>
+			</Container>  
+    )
 }
 
 export default CurrencyHeader;
