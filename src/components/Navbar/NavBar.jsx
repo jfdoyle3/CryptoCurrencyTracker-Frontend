@@ -37,6 +37,7 @@ const NavBar = (props) => {
           padding: '0em 1.2em',
           justifyContent: 'flex-end'
         }}>
+          <NavButton to="/test" label="Test" />
           <NavButton to="/" label="Home" />
           {auth.token ? (
             <Fragment>
