@@ -2,6 +2,7 @@ import React from 'react';
 import background from '../../assets/images/cryptocurrency_matrix.jpg';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Button from '../common/Button';
+import '../../styling/Home.css';
 
 
 
@@ -45,28 +46,7 @@ const Home = () => {
         <font size="7">
           <center><b>Cryptocurrency Tracker</b></center>
         </font>
-        {clicked ?(
-        <Button 
-            style={{
-              width: 'auto',
-              color: '#F1F1F1',
-            }}
-            onClick={removeFriend}
-          >
-          <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/>        
-        </Button>)
-          :
-         (<Button 
-          style={{
-            width: 'auto',
-            color: '#F0F0F0',
-
-          }}
-          onClick={removeFriend}
-        >
-        <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/>        
-      </Button>
-          )}
+        
 
       </div>
     </div>
