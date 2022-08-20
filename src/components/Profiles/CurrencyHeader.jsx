@@ -4,11 +4,11 @@ import  Container  from "../common/Container";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Button from '../common/Button';
 import { AuthContext } from "../Providers/AuthProvider";
-import '../../styling/CurrencyHeader.css';
+// import '../../styling/CurrencyHeader.css';
 
 
 const CurrencyHeader=(props)=>{
-    const {style, setStyle}=useState("cont");
+    const [isActive, setIsActive] = useState(false);
     const {id, name,ranking,logoUrl,symbol}=props.crypto;
     const {id: trackerId}=props.user;
     const [currencies]= useContext(CurrenciesContext);
@@ -18,24 +18,26 @@ const CurrencyHeader=(props)=>{
     console.log("trackID: "+trackerId);
     const liked=()=>{
         alert('You Liked me!!')
-        setStyle("cont2");
+        setIsActive(current => !current);
     }
 
-    const dislike=()=>{
-        alert("Aww you don't Like me");
-        setStyle("cont");
-    }
+ 
     return (
     <Container>
             <div style={{display: "flex"}}>
                 <img src={logoUrl} width={100} height={100} alt={name} />
                 <h1>Symbol: {symbol}</h1>
                 <h1>Name: {name}</h1>         
-                <div className={style}>
-                    <Button onClick={liked}>
-                        <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/>
-                    </Button>
-                </div>
+                <div
+        style={{
+          backgroundColor: isActive ? 'salmon' : '',
+          color: isActive ? 'white' : '',
+        }}
+        onClick={liked}
+      >
+       <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/> 
+      </div>
+            
             </div>
         </Container>  
           )

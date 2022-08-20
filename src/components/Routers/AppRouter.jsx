@@ -7,7 +7,7 @@ import Currencies from '../Cryptocurrencies/Currencies';
 import CurrenciesDaily from '../Cryptocurrencies/CurrenciesDaily';
 import CurrenciesInterval from '../Cryptocurrencies/CurrenciesInterval';
 import Trackers from "../Trackers/Trackers";
-import Profile from "../Profiles/Profile";
+import Profile from "../Profiles/TrackerProfile";
 import UpdateProfile from "../Profiles/UpdateProfile";
 import CurrencyProfile from '../Profiles/CurrencyProfile';
 import Login from '../Auth/Login';
