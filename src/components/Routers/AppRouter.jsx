@@ -12,6 +12,7 @@ import UpdateProfile from "../Profiles/UpdateProfile";
 import CurrencyProfile from '../Profiles/CurrencyProfile';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
+import Test from '../Test/TestPage';
 
 
 const AppRouter = () => {
@@ -34,6 +35,7 @@ const AppRouter = () => {
           <Route path="/update" element={<UpdateProfile />} />
           <Route path="/daily" element={<CurrenciesDaily />} />
           <Route path="/currencyProfile" element={<CurrencyProfile />} />
+          <Route path="/test" element={<Test />} />
        </Routes>
       </div>
     </div>
