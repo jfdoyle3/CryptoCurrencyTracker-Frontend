@@ -38,7 +38,7 @@ const CurrencyProfile=(props)=>{
         _getTrackers();
       },[])
 // axios call back to get self then i can get id
-    console.log("cp: "+tracker.id);
+    console.log(">>--> CP: tId: "+tracker.id);
 
     
  

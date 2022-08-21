@@ -1,6 +1,8 @@
 import React, { Fragment, useState, useContext}from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { AuthContext } from "../Providers/AuthProvider";
+import axios from "axios";
+import { apiHostUrl } from "../../config";
 
 // import '../../styling/CurrencyHeader.css';
 
@@ -8,24 +10,41 @@ import { AuthContext } from "../Providers/AuthProvider";
 const Ratings=(props)=>{
     const [isLiked, setIsLiked] = useState(false);
     const [isUnLiked, setIsUnLiked] = useState(false);
-    const {currencyId, trackerId}=props.rate;
+    const [rating,setRating]=useState({
+        "rate": 1
+    });
+    const {currId, trackId}=props.rater;
     const {auth}=useContext(AuthContext);
     // track id
     // currency id / symbol
 
-    console.log("rating-com: currId: "+currencyId);
-    console.log("rating-com: trackID: "+trackerId);
+    console.log(">>--> Rating: cId: "+currId+" | tId: "+trackId);
 
-    const like=()=>{
+    const like= async()=>{
         
         setIsLiked(current => !current);
-        setIsUnLiked(false);
+        setIsUnLiked(false);  
+        // axios to post a like
         if (isLiked){
-            
-            alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
-        
-            // axios to post a like
+        alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
+          // try{
+
+          //   const res=await axios.post(
+          //     `${apiHostUrl}/api/currency/rate/${trackId}/${currId}`, rating,
+          //     {
+          //       headers: {
+          //           "Authorization": `Bearer ${auth.token}`
+          //       }
+          //     }
+          //   )
+          //   console.log("rating component:  "+res.data);
+          //   setRating(res.data);
+          //   }catch(err){
+          //     console.log(err);
+          //   }
         }
+
+        
 
         if(!isLiked){
             alert(`Cleared:\nliked -  ${isLiked}\nunliked: ${isUnLiked}`)

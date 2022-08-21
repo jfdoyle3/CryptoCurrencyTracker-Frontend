@@ -11,17 +11,17 @@ const CurrencyHeader=(props)=>{
     const {id, name,logoUrl,symbol}=props.crypto;
     const {id: trackerId}=props.user;
     const [rating]=useState({
-        currencyId: id,
-        trackerId: trackerId
+        currId: id,
+        trackId: trackerId,
     });
- 
+    console.log(">>--> CH: cID"+id+" | tId: "+trackerId);
     return (
 			<Container>
 					<div style={{display: "flex"}}>
 							<img src={logoUrl} width={100} height={100} alt={name} />
 							<h1>Symbol: {symbol}</h1>
 							<h1>Name: {name}</h1>         
-							<Ratings rate={rating}/>
+							<Ratings rater={rating}/>
 					</div>
 			</Container>  
     )
