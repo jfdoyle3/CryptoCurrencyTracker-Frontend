@@ -18,7 +18,7 @@ const Ratings=(props)=>{
     // track id
     // currency id / symbol
 
-    console.log(">>--> Rating: cId: "+currId+" | tId: "+trackId);
+    console.log(">>--> Rating: cId: "+currId+" | tId: "+trackId+" | props: "+props);
 
     const like= async()=>{
         
@@ -72,24 +72,28 @@ const Ratings=(props)=>{
 
  
     return (
-        <Fragment>   
-        <div
-                    style={{
-                    color: isLiked ? 'green' : 'black' ,
-                    }}
-                    onClick={like}
-                >
-                 <FontAwesomeIcon icon="fa-solid fa-thumbs-up"/> 
-                </div>
-                <div
-                    style={{
-                    color: isUnLiked ?  'red' : 'black',
-                    }}
-                    onClick={unlike}
-                > 
-                 <FontAwesomeIcon icon="fa-solid fa-thumbs-down"/> 
-                </div>
-                </Fragment> 
+        <Fragment>
+          <td>   
+            <div
+                style={{
+                color: isLiked ? 'green' : 'black' ,
+                }}
+                onClick={like}
+            >
+              <FontAwesomeIcon icon="fa-solid fa-thumbs-up " size="3x"/> 
+            </div>
+          </td> 
+          <td> 
+            <div
+                style={{
+                color: isUnLiked ?  'red' : 'black',
+                }}
+                onClick={unlike}
+            > 
+              <FontAwesomeIcon icon="fa-solid fa-thumbs-down" size="3x"/> 
+            </div>
+          </td>
+        </Fragment> 
          
           )
 }

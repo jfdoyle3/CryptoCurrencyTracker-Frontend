@@ -15,15 +15,28 @@ const CurrencyHeader=(props)=>{
         trackId: trackerId,
     });
     console.log(">>--> CH: cID"+id+" | tId: "+trackerId);
+    console.log(">>==> rating: "+rating.currId+" | "+rating.trackId);
     return (
-			<Container>
+			
 					<div style={{display: "flex"}}>
-							<img src={logoUrl} width={100} height={100} alt={name} />
-							<h1>Symbol: {symbol}</h1>
-							<h1>Name: {name}</h1>         
-							<Ratings rater={rating}/>
+            <table>
+              <tr> 
+                <td>
+                  <img src={logoUrl} width={100} height={100} alt={name} />
+                </td>
+                <td>
+                  <h1>Symbol: {symbol}</h1>
+                </td>
+                <td>
+                  <h1>Name: {name}</h1>
+                </td>
+                <td>         
+                  <Ratings rater={rating}/>
+                </td>
+              </tr>
+            </table>
 					</div>
-			</Container>  
+			 
     )
 }
 

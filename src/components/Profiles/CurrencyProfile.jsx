@@ -29,7 +29,7 @@ const CurrencyProfile=(props)=>{
                 }
               }
             )
-            console.log("Tracker: "+res.data.id);
+            console.log(">>--> Tracker: "+res.data.id);
             setTracker(res.data);
             } catch (err) {
             console.log(err)
