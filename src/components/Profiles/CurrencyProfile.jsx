@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState}from "react";
-import CurrenciesDaily from "../Cryptocurrency/CurrenciesDaily";
+import CurrenciesDaily from "../Cryptocurrencies/CurrenciesDaily";
 import { CurrenciesContext } from "../Providers/CurrenciesProvider";
 import CurrencyHeader from "./CurrencyHeader";
 import { useLocation } from "react-router-dom";
@@ -29,7 +29,7 @@ const CurrencyProfile=(props)=>{
                 }
               }
             )
-            console.log("Tracker: "+res.data.id);
+            console.log(">>--> Tracker: "+res.data.id);
             setTracker(res.data);
             } catch (err) {
             console.log(err)
@@ -38,7 +38,7 @@ const CurrencyProfile=(props)=>{
         _getTrackers();
       },[])
 // axios call back to get self then i can get id
-    console.log("cp: "+tracker.id);
+    console.log(">>--> CP: tId: "+tracker.id);
 
     
  
