@@ -13,12 +13,11 @@ const Ratings=(props)=>{
     const [rating,setRating]=useState({
         "rate": 1
     });
-    const {currId, trackId}=props.rater;
+    const {id}=props.a;
+    const {id: trackerId}=props.b;
     const {auth}=useContext(AuthContext);
     // track id
     // currency id / symbol
-
-    console.log(">>--> Rating: cId: "+currId+" | tId: "+trackId+" | props: "+props);
 
     const like= async()=>{
         
@@ -26,22 +25,23 @@ const Ratings=(props)=>{
         setIsUnLiked(false);  
         // axios to post a like
         if (isLiked){
-        alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
-          // try{
+       // alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
+          try{
 
-          //   const res=await axios.post(
-          //     `${apiHostUrl}/api/currency/rate/${trackId}/${currId}`, rating,
-          //     {
-          //       headers: {
-          //           "Authorization": `Bearer ${auth.token}`
-          //       }
-          //     }
-          //   )
-          //   console.log("rating component:  "+res.data);
-          //   setRating(res.data);
-          //   }catch(err){
-          //     console.log(err);
-          //   }
+            const res=await axios.post(
+              `${apiHostUrl}/api/currency/rate/${trackerId}/${id}`, rating,
+              {
+                headers: {
+                  "Authorization": `Bearer ${auth.token}`
+                }
+              }
+            )
+            console.log("rating component:  "+res.data);
+            setRating(res.data);
+            console.log('SET!!!');
+            }catch(err){
+              console.log(err);
+            }
         }
 
         

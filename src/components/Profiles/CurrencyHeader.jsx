@@ -10,12 +10,7 @@ import Ratings from '../Ratings/Ratings';
 const CurrencyHeader=(props)=>{
     const {id, name,logoUrl,symbol}=props.crypto;
     const {id: trackerId}=props.user;
-    const [rating]=useState({
-        currId: id,
-        trackId: trackerId,
-    });
-    console.log(">>--> CH: cID"+id+" | tId: "+trackerId);
-    console.log(">>==> rating: "+rating.currId+" | "+rating.trackId);
+    
     return (
 			
 					<div style={{display: "flex"}}>
@@ -31,7 +26,7 @@ const CurrencyHeader=(props)=>{
                   <h1>Name: {name}</h1>
                 </td>
                 <td>         
-                  <Ratings rater={rating}/>
+                  <Ratings a={props.crypto} b={props.user}/>
                 </td>
               </tr>
             </table>
