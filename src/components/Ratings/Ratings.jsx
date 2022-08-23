@@ -13,9 +13,10 @@ const Ratings=(props)=>{
     const [auth] = useContext(AuthContext);
     const [isLiked, setIsLiked] = useState(false);
     const [isUnLiked, setIsUnLiked] = useState(false);
-    const [rating,setRating]=useState({
+    const [rating,setRating]=useState(
+      {
         "rate": 1
-    });
+      });
     
    console.log(">>==> RATING: rating: "+rating.rate+"\ncId: "+id+"\ntId: "+trackerId+"\ntoken: "+auth.token);
     
@@ -30,7 +31,7 @@ const Ratings=(props)=>{
           try{
 
             const res=await axios.post(
-              `${apiHostUrl}/api/currency/rate/${trackerId}/${id}`, rating.rate,
+              `${apiHostUrl}/api/currency/rate/${trackerId}/${id}`, rating,
               {
                 headers: {
                   "Authorization": `Bearer ${auth.token}`
