@@ -15,6 +15,7 @@ const CurrencyProfile=(props)=>{
     const [currencies]= useContext(CurrenciesContext);
     const currency=currencies.data.find(cur => cur.symbol===location.state.symbol);
     const [tracker, setTracker] = useState([]);
+    
     const [auth] = useContext(AuthContext);
 
     useEffect(() => {
