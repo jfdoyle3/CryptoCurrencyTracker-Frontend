@@ -8,28 +8,29 @@ import { apiHostUrl } from "../../config";
 
 
 const Ratings=(props)=>{
+    const {id}=props.a;
+    const {id: trackerId}=props.b;
+    const [auth] = useContext(AuthContext);
     const [isLiked, setIsLiked] = useState(false);
     const [isUnLiked, setIsUnLiked] = useState(false);
     const [rating,setRating]=useState({
         "rate": 1
     });
-    const {id}=props.a;
-    const {id: trackerId}=props.b;
-    const {auth}=useContext(AuthContext);
-    // track id
-    // currency id / symbol
-
+    
+   console.log(">>==> RATING: rating: "+rating.rate+"\ncId: "+id+"\ntId: "+trackerId+"\ntoken: "+auth.token);
+    
     const like= async()=>{
         
         setIsLiked(current => !current);
         setIsUnLiked(false);  
+
         // axios to post a like
         if (isLiked){
-       // alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
+         alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
           try{
 
             const res=await axios.post(
-              `${apiHostUrl}/api/currency/rate/${trackerId}/${id}`, rating,
+              `${apiHostUrl}/api/currency/rate/${trackerId}/${id}`, rating.rate,
               {
                 headers: {
                   "Authorization": `Bearer ${auth.token}`
