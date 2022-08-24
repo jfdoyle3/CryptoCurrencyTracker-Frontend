@@ -1,10 +1,16 @@
 table {
-  width: 100%;
+  width: 50%;
+ 
+ 
 }
 
-.td {
-  height: 40px;
-  width: 25px;
+td, th {
+  /* border: 1px solid black; */
+  /* border-collapse: collapse; */
+  /* height: 40px;
+  width: 25px; */
   text-align: center;
   vertical-align: middle;
+  padding: 1px;
+  
 }

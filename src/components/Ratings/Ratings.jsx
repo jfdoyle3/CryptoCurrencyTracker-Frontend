@@ -19,7 +19,7 @@ const Ratings=(props)=>{
       });
     
    console.log(">>==> RATING: rating: "+rating.rate+"\ncId: "+id+"\ntId: "+trackerId+"\ntoken: "+auth.token);
-    
+   console.log(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
     const like= async()=>{
         
         setIsLiked(current => !current);
@@ -27,7 +27,7 @@ const Ratings=(props)=>{
 
         // axios to post a like
         if (isLiked){
-         alert(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
+         
           try{
 
             const res=await axios.post(
@@ -48,11 +48,11 @@ const Ratings=(props)=>{
 
         
 
-        if(!isLiked){
-            alert(`Cleared:\nliked -  ${isLiked}\nunliked: ${isUnLiked}`)
+        // if(!isLiked){
+        //     alert(`Cleared:\nliked -  ${isLiked}\nunliked: ${isUnLiked}`)
             
-            // axios to remove/delete like
-        }
+        //     // axios to remove/delete like
+        // }
     }
 
     const unlike=()=>{

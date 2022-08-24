@@ -4,8 +4,9 @@ import { apiHostUrl } from "../../config";
 import Favorite from "./models/Favorite";
 import {AuthContext} from '../Providers/AuthProvider';
 import Spinner from '../faCommon/Spinner';
-import BorderCard from '../common/BorderCard'
+import BorderCard from '../common/BorderCard';
 import "../../styling/Table.css";
+
 
 
 const Favorites=()=>{
@@ -41,14 +42,14 @@ const Favorites=()=>{
   }
 
   return(
-    <div style={{
-      display: "flex",
-      flex: "1",
-      flexDirection: "column",
-      alignItems: 'center',
-      minHeight: '100vh',
-    }}>
-      
+    // <div style={{
+    //   display: "flex",
+    //   flex: "1",
+    //   flexDirection: "column",
+    //   alignItems: 'center',
+    //   minHeight: '100vh',
+    // }}>
+      <div>
       <h1>Favorites</h1>
       <table>
             <tr>

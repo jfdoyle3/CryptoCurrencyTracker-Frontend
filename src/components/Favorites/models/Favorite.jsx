@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import { apiHostUrl } from "../../../config";
 import {AuthContext} from "../../Providers/AuthProvider";
+import "../../../styling/Table.css";
 
 
 
