@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import Navbar from "../Navbar/NavBar";
-import Home from "../Home/Home";
+import Home from "../Home/Home.org";
 import TopFive from "../Cryptocurrencies/TopFive";
 import Currencies from '../Cryptocurrencies/Currencies';
 // import CurrenciesDaily from '../Cryptocurrencies/CurrenciesDaily';
