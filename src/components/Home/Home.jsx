@@ -1,44 +1,42 @@
 import React from 'react';
 import background from '../../assets/images/cryptocurrency_matrix.jpg';
+import Container from '../common/Container';
+import Splash from '../common/Splash';
+
 
 
 
 const Home = () => {
   console.log("Home - activated!!")
-
-
-
-  const styles = {
-    header: {
-      backgroundImage: `url(${background})`,
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      height: '100vh',
-      position: 'relative'
-    },
-  
-    content: {
-      color: '#f0f0f0',
-      width:'300px',
-      height:'200px',
-      position:'absolute',
-      left:'50%',
-      top:'40%',
-      margin: '-100px 0 0 -150px',
-      textShadow: '5px 5px  #000',
-    }
-  }
-
   return (
-    <div style={styles.header}>
-      <div style={styles.content}>
-        <font size="7">
-          <center><b>Cryptocurrency Tracker</b></center>
-        </font>
-      </div>
-    </div>
-    
+    <Container>
+      <Splash
+        image = {background}
+        style={{
+            position: 'absolute',
+            color: '#F1F1F1',
+            top: '75px' 
+        }}
+      >
+      <font size="6">
+        <h1
+          style={{
+            textShadow: '1px, 1px, red'
+          }}
+        >
+          <b>Cryptocurrency</b>
+   
+        </h1>
+        <h1
+          style={{
+           textShadow: '1px, 1px, red'
+          }}
+          >
+          <center><b>Tracker</b></center>  
+            </h1>
+      </font>
+      </Splash>
+    </Container>
   )
 }
 

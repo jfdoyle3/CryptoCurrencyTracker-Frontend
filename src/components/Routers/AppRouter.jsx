@@ -13,6 +13,7 @@ import CurrencyProfile from '../Profiles/CurrencyProfile';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import Test from '../Test/TestPage';
+import FooterComponent from '../Footer/Footer';
 
 
 const AppRouter = () => {
@@ -21,6 +22,7 @@ const AppRouter = () => {
   return (
     <div style={{width: '100%'}}>
       <Navbar />
+      <FooterComponent />
       <div style={{ marginTop: "75px", width: "100%"}}>
         <Routes>
           <Route path="/" element={<Home />} />

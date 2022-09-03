@@ -1,5 +1,5 @@
 import React from 'react';
-//import "../../../styling/Table.css";
+import "../../../styling/Table.css";
 
 const CurrencyDaily = (props) => {
 
@@ -7,7 +7,6 @@ const CurrencyDaily = (props) => {
           id, 
           symbol, 
           price,               
-          priceDate,
           priceTimeStamp,
           circulatingSupply,
           maxSupply,
@@ -15,6 +14,19 @@ const CurrencyDaily = (props) => {
           high,
           highTimeStamp,
         }=props.currencyDaily
+
+        let formatter= new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD'
+        });
+        let priceFormatted=formatter.format(parseFloat(price).toFixed(2));
+        let rndHigh=parseFloat(high).toFixed(2);
+        const arrPriceTimeStamp=priceTimeStamp.split("T");
+        let priceDate=arrPriceTimeStamp[0];
+        let timeStamp=arrPriceTimeStamp[1].substring(0,8);
+        let highDate=highTimeStamp.substring(0,10);
+        // UTC -5
+
 
   return (
         <table>
@@ -24,7 +36,7 @@ const CurrencyDaily = (props) => {
           </tr>
           <tr key={id}>
             <th>Price</th>
-            <td>{price}</td> 
+            <td>{priceFormatted}</td> 
           </tr>
           <tr key={id}>
             <th>Price Date</th>
@@ -32,7 +44,7 @@ const CurrencyDaily = (props) => {
           </tr>
           <tr key={id}>
             <th>Price TimeStamp</th>
-            <td>{priceTimeStamp}</td> 
+            <td>{timeStamp}</td> 
           </tr>
           <tr key={id}>
           <th>Circulating Supply</th>
@@ -48,7 +60,7 @@ const CurrencyDaily = (props) => {
           </tr>
           <tr key={id}>
           <th>High</th>
-            <td>{high}</td> 
+            <td>{rndHigh}</td> 
           </tr>
           <tr key={id}>
           <th>Max Supply</th>
@@ -56,7 +68,7 @@ const CurrencyDaily = (props) => {
           </tr>
           <tr key={id}>
           <th>High TimeStamp</th>
-            <td>{highTimeStamp}</td> 
+            <td>{highDate}</td> 
           </tr>
         </table>
   )

@@ -50,19 +50,21 @@ const CurrencyProfile=(props)=>{
     // if currency not found return 404
     return (
         
-        <div>
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          
+        }}>
             <CurrencyHeader crypto={currency} user={tracker}/>
       
           <div style={{
                       display: "flex",
-                      flex: "1",
-                      flexDirection: "row"
+                      flexDirection: "row",
+                      backgroundColor: "red"
           }}>
               <CurrenciesDaily crypto={currency} user={tracker}/>
             </div>
             <div style={{
-                      display: "flex",
-                      flex: "1",
                       flexDirection: "row"
           }}>
               <h1>Message Board</h1>
@@ -75,3 +77,7 @@ const CurrencyProfile=(props)=>{
 }
 
 export default CurrencyProfile;
+
+
+
+
