@@ -8,6 +8,7 @@ import Button from '../common/Button';
 import {useNavigate} from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
 import image from '../../assets/images/cryptonet.jpg';
+import Container from '../common/Container';
 
 const Profile = (props) => {
   const params = useParams();
@@ -54,6 +55,7 @@ const Profile = (props) => {
   }
 
   return (
+    <Container>
     <div style={{
       display: "flex",
       flex: "1",
@@ -72,7 +74,8 @@ const Profile = (props) => {
       ) : 
         displayProfile()
       }
-    </div>
+    </div>]
+    </Container>
   )
 }
 
