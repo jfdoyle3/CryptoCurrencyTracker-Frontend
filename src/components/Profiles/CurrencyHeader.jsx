@@ -12,18 +12,21 @@ const CurrencyHeader=(props)=>{
     const {id: trackerId}=props.user;
     
     return (
-			
-					<div style={{display: "flex"}}>
+					<div style={{
+            flex: "1",
+            flexDirection: "column",
+            maxWidth: "100%",
+          }}>
             <table>
               <tr> 
                 <td>
                   <img src={logoUrl} width={100} height={100} alt={name} />
                 </td>
                 <td>
-                  <h1>Symbol: {symbol}</h1>
+                  <h1>{symbol}</h1>
                 </td>
                 <td>
-                  <h1>Name: {name}</h1>
+                  <h1>{name}</h1>
                 </td>
                 <td>         
                   <Ratings a={props.crypto} b={props.user}/>

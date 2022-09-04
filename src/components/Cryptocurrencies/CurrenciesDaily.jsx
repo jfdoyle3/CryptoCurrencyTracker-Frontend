@@ -51,8 +51,6 @@ const CurrenciesDaily = (props) => {
       alignItems: 'center',
       minHeight: '100vh',
     }}>
-      <h1>Currencies</h1>
-    
       {loading ? 
         <Spinner /> 
       :
