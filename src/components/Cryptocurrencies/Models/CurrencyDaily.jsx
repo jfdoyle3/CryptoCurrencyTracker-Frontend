@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment  from 'react-moment';
 import "../../../styling/Table.css";
 
 const CurrencyDaily = (props) => {
@@ -6,7 +7,8 @@ const CurrencyDaily = (props) => {
     const{
           id, 
           symbol, 
-          price,               
+          price,
+          priceDate,               
           priceTimeStamp,
           circulatingSupply,
           maxSupply,
@@ -21,30 +23,27 @@ const CurrencyDaily = (props) => {
         });
         let priceFormatted=formatter.format(parseFloat(price).toFixed(2));
         let rndHigh=parseFloat(high).toFixed(2);
-        const arrPriceTimeStamp=priceTimeStamp.split("T");
-        let priceDate=arrPriceTimeStamp[0];
-        let timeStamp=arrPriceTimeStamp[1].substring(0,8);
-        let highDate=highTimeStamp.substring(0,10);
+        // const arrPriceTimeStamp=priceTimeStamp.split("T");
+        // let priceDate=arrPriceTimeStamp[0];
+        // let timeStamp=arrPriceTimeStamp[1].substring(0,8);
+        // let highDate=highTimeStamp.substring(0,10);
         // UTC -5
 
-
+      
+        
   return (
-        <table>
-           <tr key={id}>
-            <th>Symbol</th>
-            <td>{symbol}</td> 
-          </tr>
+        <table id="daily">
           <tr key={id}>
             <th>Price</th>
             <td>{priceFormatted}</td> 
           </tr>
           <tr key={id}>
             <th>Price Date</th>
-            <td>{priceDate}</td> 
+            <td><Moment>{priceDate}</Moment></td> 
           </tr>
           <tr key={id}>
             <th>Price TimeStamp</th>
-            <td>{timeStamp}</td> 
+            <td><Moment>{priceTimeStamp}</Moment></td> 
           </tr>
           <tr key={id}>
           <th>Circulating Supply</th>
@@ -68,7 +67,7 @@ const CurrencyDaily = (props) => {
           </tr>
           <tr key={id}>
           <th>High TimeStamp</th>
-            <td>{highDate}</td> 
+            <td><Moment>{highTimeStamp}</Moment></td> 
           </tr>
         </table>
   )
