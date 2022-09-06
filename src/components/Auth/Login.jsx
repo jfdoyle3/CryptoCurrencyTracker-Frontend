@@ -38,13 +38,7 @@ const Login = () => {
   }
 
   return (
-    <div style={{
-      display: "flex",
-      flex: "1",
-      flexDirection: "column",
-      alignItems: 'center',
-      minHeight: '100vh',
-    }}>
+    <div id="columnComponentsNBk">
       <h1>Login</h1>
       <LoginForm 
         query={query} 
