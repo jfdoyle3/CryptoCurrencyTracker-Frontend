@@ -10,6 +10,7 @@ import Favorites from '../Favorites/Favorites';
 import image from '../../assets/images/cryptonet.jpg';
 import Container from '../common/Container';
 
+
 const Profile = (props) => {
   const params = useParams();
   const [tracker, setTracker] = useState({
@@ -40,10 +41,10 @@ const Profile = (props) => {
       navigate(`/update`)
     }
 
-    const displayProfile = () => {
-    return (
+  const displayProfile = () => {
+  return (
       <Fragment>
-           <div>
+          <div id="columnComponentsNBk">
             <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>Name:&emsp;{tracker.name.toUpperCase()}</h1>
             <h2>Signature:&emsp;{tracker.signature}</h2>
@@ -56,25 +57,13 @@ const Profile = (props) => {
 
   return (
     <Container>
-    <div style={{
-      display: "flex",
-      flex: "1",
-      flexDirection: "column",
-      alignItems: 'center',
-      minHeight: '100vh',
-      height: '100vh',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundColor: '#5c5c5c',
-      color: "#f0f0f0"
-    }}>
+    <div id="columnComponentsNBk">
       {loading ? (
         <Spinner /> 
       ) : 
         displayProfile()
       }
-    </div>]
+    </div>
     </Container>
   )
 }

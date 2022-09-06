@@ -42,14 +42,8 @@ const Favorites=()=>{
   }
 
   return(
-    // <div style={{
-    //   display: "flex",
-    //   flex: "1",
-    //   flexDirection: "column",
-    //   alignItems: 'center',
-    //   minHeight: '100vh',
-    // }}>
-      <div>
+    <div id="columnComponentsNBk">
+
       <h1>Favorites</h1>
       <table>
             <tr>
