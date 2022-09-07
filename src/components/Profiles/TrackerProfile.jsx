@@ -44,11 +44,15 @@ const Profile = (props) => {
   const displayProfile = () => {
   return (
       <Fragment>
+         
+         
           <div id="columnComponentsNBk">
             <h1 style={{alignItems: "center"}}>Tracker:</h1>
             <h1>Name:&emsp;{tracker.name.toUpperCase()}</h1>
             <h2>Signature:&emsp;{tracker.signature}</h2>
             <Button style={{backgroundColor: "#04b5e5"}} onClick={update}>Edit</Button>
+
+
             <Favorites />
           </div>
       </Fragment>

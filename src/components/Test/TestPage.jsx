@@ -1,39 +1,44 @@
 import React from "react";
 import Select from '../common/Select';
 import '../../styling/Test.css';
+import Container from "../common/Container";
 
 
 const TestPage =()=>{
 
-  const options = [
-    {
-      label: "Apple",
-      value: "apple",
-    },
-    {
-      label: "Mango",
-      value: "mango",
-    },
-    {
-      label: "Banana",
-      value: "banana",
-    },
-    {
-      label: "Pineapple",
-      value: "pineapple",
-    },
-  ];
+  
 
   return (
-    <div id="App">
-        <div className="select-container">
-          <select>
-            {options.map((option) => (
-              <option value={option.value}>{option.label}</option>
-            ))}
-          </select>
+    <Container>
+        <div style={{
+                     display: 'inline-flex',
+                     flexDirection: 'row',
+                     float: 'right',
+                     justifyContent:'flex-end',
+                     flexWrap: 'wrap',
+                     gap: '20px',
+                     backgroundColor: 'red',
+                     width: '100%'
+          }}>
+            <div style={{
+                          flexDirection: 'column',
+                          flex: '2',
+                          backgroundColor: 'purple'
+
+            }}>
+              <h1>Left Side</h1>
+          </div>
+
+          <div style={{
+                      flexDirection: 'column',
+                      flex: '1',
+                      backgroundColor: 'blue'
+          }}>
+            <h1>Right Side</h1>
+          </div>
         </div>
-      </div>
+
+      </Container>
   )
 }
 

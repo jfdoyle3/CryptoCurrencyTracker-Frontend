@@ -43,20 +43,19 @@ const Favorites=()=>{
 
   return(
     <div id="columnComponentsNBk">
-
       <h1>Favorites</h1>
       <table>
-            <tr>
-              <th></th>
-              <th>Rank</th>
-              <th>Symbol</th>
-              <th>Name</th>
-            </tr>
+        <tr>
+          <th></th>
+          <th>Rank</th>
+          <th>Symbol</th>
+          <th>Name</th>
+        </tr>
             {loading ? 
         <Spinner /> 
-      :
+        :
         displayFavorites()
-      }
+        }
       </table>
     </div>
   )
