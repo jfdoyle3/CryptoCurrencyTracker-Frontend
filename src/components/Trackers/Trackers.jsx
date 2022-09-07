@@ -90,11 +90,11 @@ const Trackers = (props) => {
     <div style={styles.header}>
       <div style={styles.content}>
         <h1>Trackers</h1>
-        {loading ? 
-          <Spinner /> 
-        :
-          displayTrackers()
-        }
+            {loading ? 
+              <Spinner /> 
+            :
+              displayTrackers()
+            }
       </div>
     </div>
   )

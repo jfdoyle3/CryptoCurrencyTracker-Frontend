@@ -65,7 +65,8 @@ const CurrencyProfile=(props)=>{
               <CurrenciesDaily crypto={currency} user={tracker}/>
             </div>
             <div style={{
-                      flexDirection: "row"
+                    flex: '2',
+                    flexDirection: 'column'
           }}>
               <h1>Message Board</h1>
             </div>
