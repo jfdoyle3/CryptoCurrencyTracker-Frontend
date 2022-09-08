@@ -6,39 +6,46 @@ import Container from "../common/Container";
 
 const TestPage =()=>{
 
-  
+  const options = [
+    {
+      label: "Apple",
+      value: "apple",
+    },
+    {
+      label: "Mango",
+      value: "mango",
+    },
+    {
+      label: "Banana",
+      value: "banana",
+    },
+    {
+      label: "Pineapple",
+      value: "pineapple",
+    },
+  ];
 
   return (
     <Container>
-        <div style={{
-                     display: 'inline-flex',
-                     flexDirection: 'row',
-                     float: 'right',
-                     justifyContent:'flex-end',
-                     flexWrap: 'wrap',
-                     gap: '20px',
-                     backgroundColor: 'red',
-                     width: '100%'
-          }}>
-            <div style={{
-                          flexDirection: 'column',
-                          flex: '2',
-                          backgroundColor: 'purple'
-
-            }}>
+        <div id="divOne">
+          <h1> Header</h1>
+        </div>
+    
+        <div id="divTwo">
+            <div id="divThree">
               <h1>Left Side</h1>
           </div>
 
-          <div style={{
-                      flexDirection: 'column',
-                      flex: '1',
-                      backgroundColor: 'blue'
-          }}>
-            <h1>Right Side</h1>
+          <div id="divFour">
+             <select>
+            {options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
           </div>
         </div>
 
-      </Container>
+        </Container>
   )
 }
 
