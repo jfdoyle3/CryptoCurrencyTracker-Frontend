@@ -3,11 +3,12 @@ import CurrenciesDaily from "../Cryptocurrencies/CurrenciesDaily";
 import { CurrenciesContext } from "../Providers/CurrenciesProvider";
 import CurrencyHeader from "./CurrencyHeader";
 import { useLocation } from "react-router-dom";
-// import  Container  from "../common/Container";
+import  Container  from "../common/Container";
 import axios from "axios";
 import { apiHostUrl } from "../../config";
 import {AuthContext} from '../Providers/AuthProvider';
 import { TrackerContext } from "../Providers/TrackerProvider";
+import Select from "../common/Select";
 
 
 
@@ -43,36 +44,71 @@ const CurrencyProfile=(props)=>{
     //     _getTrackers();
     //   },[])
 // axios call back to get self then i can get id
-    
+const options = [
+  {
+    label: "Apple",
+    value: "apple",
+  },
+  {
+    label: "Mango",
+    value: "mango",
+  },
+  {
+    label: "Banana",
+    value: "banana",
+  },
+  {
+    label: "Pineapple",
+    value: "pineapple",
+  },
+];
 
     
  
     // if currency not found return 404
     return (
         
+      <Container>
         <div style={{
-          display: "flex",
-          flexDirection: "column",
-          
+                    display: 'inline-flex',
+                    flexDirection: 'column',
+                    float: 'right',
+                    justifyContent:'flex-end',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    width: '100%'
         }}>
-            <CurrencyHeader crypto={currency} user={tracker}/>
-      
-          <div style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      backgroundColor: "red"
+          <CurrencyHeader crypto={currency} user={tracker}/>
+        </div>
+        <div style={{
+                    display: 'inline-flex',
+                    flexDirection: 'row',
+                    float: 'right',
+                    justifyContent:'flex-end',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    width: '100%'
           }}>
-              <CurrenciesDaily crypto={currency} user={tracker}/>
-            </div>
             <div style={{
+                    flexDirection: 'column',
                     flex: '2',
-                    flexDirection: 'column'
           }}>
-              <h1>Message Board</h1>
-            </div>
-
-      </div>
-     
+              <Select>
+                {options.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
+              </Select>
+              <CurrenciesDaily crypto={currency} user={tracker}/>
+        </div>
+        <div style={{
+                    flexDirection: 'column',
+                    flex: '1',
+                    backgroundColor: '#F0F0F0'
+        }}>
+          <h1>Message Board</h1>
+        </div>
+        </div>
+     </Container>
     
     )
 }
