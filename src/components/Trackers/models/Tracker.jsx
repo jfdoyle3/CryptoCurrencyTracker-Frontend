@@ -10,11 +10,12 @@ const Tracker = (props) => {
     <BorderCard style={{
       backgroundColor: "#04b5e5",
       color: '#000',
-      textShadow: '2px 2px 8px #FFF' 
+      textShadow: '2px 2px 8px #FFF',
+      flexDirection: 'column'
       }}
       onClick={() => props.onSelect(id)}>
       <h1>{name}</h1>
-      <h4>Signature:&emsp;{signature}</h4>     
+      <h4>Signature:&emsp;{signature}</h4>  
     </BorderCard>
   )
 }
