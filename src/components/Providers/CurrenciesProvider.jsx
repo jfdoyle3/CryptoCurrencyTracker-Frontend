@@ -36,7 +36,7 @@ const CurrenciesProvider = (props) => {
   useEffect(()=> {
     
 
-    console.log("Currencies - use Effect Acitvated!!!");
+    console.log("Currencies Provider - use Effect Acitvated!!!");
     
   //  setLoading(true);
     _getAllCurrencies();

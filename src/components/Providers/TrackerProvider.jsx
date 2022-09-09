@@ -36,7 +36,7 @@ const TrackerProvider = (props) => {
   useEffect(()=> {
     
 
-    console.log("Tracker - use Effect Acitvated!!!");
+    console.log("Tracker Provider - use Effect Acitvated!!!");
     
   //  setLoading(true);
   if(auth.token)
