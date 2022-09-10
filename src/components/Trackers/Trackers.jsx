@@ -69,6 +69,7 @@ const Trackers = (props) => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
+      width: '100%'
      
     },
   
