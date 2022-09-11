@@ -3,14 +3,16 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { AuthContext } from "../Providers/AuthProvider";
 import axios from "axios";
 import { apiHostUrl } from "../../config";
+import { TrackerContext } from "../Providers/TrackerProvider";
 
 // import '../../styling/CurrencyHeader.css';
 
 
 const Ratings=(props)=>{
     const {id}=props.a;
-    const {id: trackerId}=props.b;
+    const {tId: trackerId}=props.b;
     const [auth] = useContext(AuthContext);
+    const [tracker]=useContext(TrackerContext);
     const [isLiked, setIsLiked] = useState(false);
     const [isUnLiked, setIsUnLiked] = useState(false);
     const [rating,setRating]=useState(
@@ -18,33 +20,33 @@ const Ratings=(props)=>{
         "rate": 1
       });
     
-   console.log(">>==> RATING: rating: "+rating.rate+"\ncId: "+id+"\ntId: "+trackerId+"\ntoken: "+auth.token);
+   console.log(">>==> RATING: rating: "+rating+"\ncId: "+id+"\ntId: "+tracker.id+"\ntoken: "+auth.token);
    console.log(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
-    const like= async()=>{
+   const like= async()=>{
         
-        setIsLiked(current => !current);
-        setIsUnLiked(false);  
+    setIsLiked(current => !current);
+    setIsUnLiked(false);  
 
-        // axios to post a like
-        if (isLiked){
-         
-          try{
+    // axios to post a like
+    if (isLiked){
+      
+      try{
 
-            const res=await axios.post(
-              `${apiHostUrl}/api/currency/rate/${trackerId}/${id}`, rating,
-              {
-                headers: {
-                  "Authorization": `Bearer ${auth.token}`
-                }
-              }
-            )
-            console.log("rating component:  "+res.data);
-            setRating(res.data);
-            console.log('SET!!!');
-            }catch(err){
-              console.log(err);
+        const res=await axios.post(
+          `${apiHostUrl}/api/currency/rate/${tracker.id}/${id}`, rating,
+          {
+            headers: {
+              "Authorization": `Bearer ${auth.token}`
             }
+          }
+        )
+        console.log("rating component:  "+res.data);
+        setRating(res.data);
+        console.log('SET!!!');
+        }catch(err){
+          console.log(err);
         }
+    }
 
         
 

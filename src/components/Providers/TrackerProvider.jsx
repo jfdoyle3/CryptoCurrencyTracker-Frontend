@@ -8,7 +8,7 @@ const TrackerContext = React.createContext([]);
 
 const TrackerProvider = (props) => {
   
-  const [tracker, setTracker] = useState({data:[{id: null, name: null, signature: null}]});
+  const [tracker, setTracker] = useState({id: null, name: null, signature: null});
   const [auth, setAuth]=useContext(AuthContext);
 
   const _getAllTracker= async()=>{
@@ -26,7 +26,7 @@ const TrackerProvider = (props) => {
 
       console.log(res.data);
      // setLoading(false);
-      setTracker({data: res.data});
+      setTracker(res.data);
     }catch(err){
       console.error(err.message);
     }
