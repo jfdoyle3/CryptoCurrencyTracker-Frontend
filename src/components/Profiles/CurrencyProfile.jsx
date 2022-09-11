@@ -21,7 +21,7 @@ const CurrencyProfile=(props)=>{
     const [tracker]=useContext(TrackerContext);
 
     // add loading here ...
-    console.log(">>==> CP: TrackerPro: "+tracker.id);
+    console.log(">>==> CP: TrackerProvider: "+tracker.id);
     // Tracker Provider
     // useEffect(() => {
     //     const _getTrackers = async () => {
