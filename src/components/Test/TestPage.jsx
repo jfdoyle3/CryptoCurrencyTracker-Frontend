@@ -1,26 +1,30 @@
-import React, {useEffect, useContext}from "react";
+import React, {useEffect, useContext, useState}from "react";
 import Select from '../common/Select';
 import '../../styling/Test.css';
 import Container from "../common/Container";
 import { apiHostUrl } from '../../config';
 import { AuthContext } from '../Providers/AuthProvider';
+import CurrencyDaily from '../Cryptocurrencies/Models/CurrencyDaily';
 
 
 const TestPage =()=>{
 
   const symbol="BTC";
+  const options = ['One', 'Two', 'Three', 'Four', 'Five'];
+  const [dailyDates, setDailyDates]=useState([]);
+  const [daily, setDaily]=useState([]);
   const [auth, setAuth]=useContext(AuthContext);
 
   useEffect(() => {
     const requestOptions = {
       headers: { 'Authorization': `Bearer ${auth.token}` }
     };
-    const url = `${apiHostUrl}/api/currency/dailyPrice/${symbol}`;
-
+    const url = `${apiHostUrl}/api/currency/getDailyPrice/${symbol}`;
     const fetchData = async () => {
       try {
         const response = await fetch(url,requestOptions);
         const json = await response.json();
+        setDaily(json);
       } catch (error) {
         console.log("error", error);
       }
@@ -29,6 +33,14 @@ const TestPage =()=>{
     fetchData();
 }, []);
   
+const onOptionChangeHandler = (event) => {
+  console.log("User Selected Value - ", event.target.value)
+}
+const displayDaily = () => {
+  return daily.map(info => <CurrencyDaily currencyDaily={info} key={info.ranking} />)
+}
+
+let lastestDaily=daily.find(item => item.id===6);
 
   return (
     <Container>
@@ -48,7 +60,15 @@ const TestPage =()=>{
                           backgroundColor: 'purple'
 
             }}>
-              <h1>Left Side</h1>
+              <select onChange={onOptionChangeHandler}>
+                <option>Please choose one option</option>
+                {options.map((option, index) => {
+                    return <option key={index} >
+                        {option}
+                    </option>
+                })}
+              </select>
+             <CurrencyDaily currencyDaily={lastestDaily} />
           </div>
 
           <div style={{
@@ -56,7 +76,7 @@ const TestPage =()=>{
                       flex: '1',
                       backgroundColor: 'blue'
           }}>
-            <h1>Right Side</h1>
+            <h1>Static Symbol: BTC</h1>
           </div>
         </div>
 

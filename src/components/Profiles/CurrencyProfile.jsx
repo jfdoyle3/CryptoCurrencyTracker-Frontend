@@ -19,9 +19,11 @@ const CurrencyProfile=(props)=>{
   //  const [trackerState, setTrackerState] = useState([]);
     const [auth] = useContext(AuthContext);
     const [tracker]=useContext(TrackerContext);
-
+    const options = ['One', 'Two', 'Three', 'Four', 'Five'];
+    const onOptionChangeHandler = (event) => {
+      console.log("User Selected Value - ", event.target.value)
+    }
     // add loading here ...
-    console.log(">>==> CP: TrackerProvider: "+tracker.id);
     // Tracker Provider
     // useEffect(() => {
     //     const _getTrackers = async () => {
@@ -44,24 +46,7 @@ const CurrencyProfile=(props)=>{
     //     _getTrackers();
     //   },[])
 // axios call back to get self then i can get id
-const options = [
-  {
-    label: "Apple",
-    value: "apple",
-  },
-  {
-    label: "Mango",
-    value: "mango",
-  },
-  {
-    label: "Banana",
-    value: "banana",
-  },
-  {
-    label: "Pineapple",
-    value: "pineapple",
-  },
-];
+
 
     
  
@@ -93,11 +78,15 @@ const options = [
                     flexDirection: 'column',
                     flex: '2',
           }}>
-              <Select>
-                {options.map((option) => (
-                  <option value={option.value}>{option.label}</option>
-                ))}
-              </Select>
+              <select onChange={onOptionChangeHandler}>
+  
+                <option>Please choose one option</option>
+                {options.map((option, index) => {
+                    return <option key={index} >
+                        {option}
+                    </option>
+                })}
+              </select>
               <CurrenciesDaily crypto={currency} user={tracker}/>
         </div>
         <div style={{
