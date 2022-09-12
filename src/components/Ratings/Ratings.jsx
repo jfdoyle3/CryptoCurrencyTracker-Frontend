@@ -20,8 +20,8 @@ const Ratings=(props)=>{
         "rate": 1
       });
     
-   console.log(">>==> RATING: rating: "+rating+"\ncId: "+id+"\ntId: "+tracker.id+"\ntoken: "+auth.token);
-   console.log(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
+  //  console.log(">>==> RATING: rating: "+rating+"\ncurrency: "+id+"\ntracker: "+tracker.id);
+  //  console.log(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
    const like= async()=>{
         
     setIsLiked(current => !current);
@@ -40,7 +40,7 @@ const Ratings=(props)=>{
             }
           }
         )
-        console.log("rating component:  "+res.data);
+       // console.log("rating component:  "+res.data);
         setRating(res.data);
         console.log('SET!!!');
         }catch(err){
