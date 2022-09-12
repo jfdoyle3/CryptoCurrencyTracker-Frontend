@@ -40,7 +40,14 @@ const displayDaily = () => {
   return daily.map(info => <CurrencyDaily currencyDaily={info} key={info.ranking} />)
 }
 
-let lastestDaily=daily.find(item => item.id===6);
+const selectDaily = () => {
+  return daily.map(info => <CurrencyDaily currencyDaily={info} key={info.ranking} />)
+}
+
+//let lastestDaily=daily.find(item => item.id===30);
+const lastestDaily=daily.at(-1);
+
+
 
   return (
     <Container>
@@ -50,14 +57,15 @@ let lastestDaily=daily.find(item => item.id===6);
                      float: 'right',
                      justifyContent:'flex-end',
                      flexWrap: 'wrap',
-                     gap: '20px',
-                     backgroundColor: 'red',
+                     gap: '1px',
+                     backgroundColor: 'black',
                      width: '100%'
           }}>
             <div style={{
                           flexDirection: 'column',
                           flex: '2',
-                          backgroundColor: 'purple'
+                          backgroundColor: 'grey',
+                          postion: 'fixed'
 
             }}>
               <select onChange={onOptionChangeHandler}>
@@ -68,13 +76,14 @@ let lastestDaily=daily.find(item => item.id===6);
                     </option>
                 })}
               </select>
+             {/* {displayDaily()} */}
              <CurrencyDaily currencyDaily={lastestDaily} />
           </div>
 
           <div style={{
                       flexDirection: 'column',
                       flex: '1',
-                      backgroundColor: 'blue'
+                      backgroundColor: 'grey'
           }}>
             <h1>Static Symbol: BTC</h1>
           </div>
