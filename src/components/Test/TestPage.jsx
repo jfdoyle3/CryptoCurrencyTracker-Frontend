@@ -76,8 +76,8 @@ const lastestDaily=daily.at(-1);
                     </option>
                 })}
               </select>
-             {/* {displayDaily()} */}
-             <CurrencyDaily currencyDaily={lastestDaily} />
+             {displayDaily()} 
+             {/* <CurrencyDaily currencyDaily={lastestDaily} /> */}
           </div>
 
           <div style={{

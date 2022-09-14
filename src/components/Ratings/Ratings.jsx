@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext}from "react";
+import React, { Fragment, useState, useContext, useEffect}from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { AuthContext } from "../Providers/AuthProvider";
 import axios from "axios";
@@ -17,36 +17,38 @@ const Ratings=(props)=>{
     const [isUnLiked, setIsUnLiked] = useState(false);
     const [rating,setRating]=useState(
       {
-        "rate": 1
+        "rate": 0
       });
     
   //  console.log(">>==> RATING: rating: "+rating+"\ncurrency: "+id+"\ntracker: "+tracker.id);
   //  console.log(`liked: ${isLiked}\nunliked: ${isUnLiked}`)
-   const like= async()=>{
-        
-    setIsLiked(current => !current);
-    setIsUnLiked(false);  
+  //  const like= async()=>{ 
+   useEffect (()=>{
+     const like= async()=>{   
+      setIsLiked(current => !current);
+      setIsUnLiked(false);  
 
     // axios to post a like
-    if (isLiked){
-      
-      try{
-
-        const res=await axios.post(
-          `${apiHostUrl}/api/currency/rate/${tracker.id}/${id}`, rating,
-          {
-            headers: {
-              "Authorization": `Bearer ${auth.token}`
+      if (isLiked){
+        try{
+          const res=await axios.post(
+            `${apiHostUrl}/api/currency/rate/${tracker.id}/${id}`, rating,
+            {
+              headers: {
+                "Authorization": `Bearer ${auth.token}`
+              }
             }
-          }
-        )
-       // console.log("rating component:  "+res.data);
-        setRating(res.data);
-        console.log('SET!!!');
-        }catch(err){
-          console.log(err);
-        }
-    }
+          )
+        // console.log("rating component:  "+res.data);
+          setRating(res.data);
+          console.log('SET!!!');
+          }catch(err){
+            console.log(err);
+          }   
+      }
+     } 
+     like();
+    },[]);
 
         
 
@@ -55,7 +57,7 @@ const Ratings=(props)=>{
             
         //     // axios to remove/delete like
         // }
-    }
+
 
     const unlike=()=>{
         
@@ -74,6 +76,13 @@ const Ratings=(props)=>{
         }
     }
 
+    const trigLike=()=>{
+     // setIsLiked(current => !current);
+     if (rating==0){
+      setRating({rate: 1})
+     }
+    
+    }
  
     return (
         <Fragment>
@@ -82,7 +91,7 @@ const Ratings=(props)=>{
                 style={{
                 color: isLiked ? 'green' : 'black' ,
                 }}
-                onClick={like}
+                onClick={trigLike}
             >
               <FontAwesomeIcon icon="fa-solid fa-thumbs-up " size="3x"/> 
             </div>
