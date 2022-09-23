@@ -48,7 +48,7 @@ const Ratings=(props)=>{
       }
      } 
      like();
-    },[]);
+    },[isLiked]);
 
         
 
@@ -77,7 +77,7 @@ const Ratings=(props)=>{
     }
 
     const trigLike=()=>{
-     // setIsLiked(current => !current);
+      setIsLiked(current => !current);
      if (rating==0){
       setRating({rate: 1})
      }
