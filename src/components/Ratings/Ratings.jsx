@@ -82,7 +82,7 @@ const Ratings=(props)=>{
       setRating({rate: 1})
      }
     
-    }
+    // }
  
     return (
         <Fragment>
@@ -91,7 +91,7 @@ const Ratings=(props)=>{
                 style={{
                 color: isLiked ? 'green' : 'black' ,
                 }}
-                onClick={trigLike}
+                
             >
               <FontAwesomeIcon icon="fa-solid fa-thumbs-up " size="3x"/> 
             </div>
@@ -101,7 +101,7 @@ const Ratings=(props)=>{
                 style={{
                 color: isUnLiked ?  'red' : 'black',
                 }}
-                onClick={unlike}
+                onClick={()=>setIsLiked({})}
             > 
               <FontAwesomeIcon icon="fa-solid fa-thumbs-down" size="3x"/> 
             </div>
@@ -110,5 +110,5 @@ const Ratings=(props)=>{
          
           )
 }
-
+}
 export default Ratings;
