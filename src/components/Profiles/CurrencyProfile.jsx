@@ -28,7 +28,10 @@ const CurrencyProfile=(props)=>{
     // useEffect(() => {
     //     const _getTrackers = async () => {
     //       try {
-    
+    	
+// BTC
+// Bitcoin
+
     //         const res = await axios.get(
     //           `${apiHostUrl}/api/trackers/self`,
     //           {
