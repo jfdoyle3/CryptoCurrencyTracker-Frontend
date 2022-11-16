@@ -29,8 +29,8 @@ const CurrencyProfile=(props)=>{
     //     const _getTrackers = async () => {
     //       try {
     	
-BTC
-Bitcoin
+// BTC
+// Bitcoin
 
     //         const res = await axios.get(
     //           `${apiHostUrl}/api/trackers/self`,
